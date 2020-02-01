@@ -1,0 +1,12 @@
+S generated files #
+######################
+.DS_Store
+sandbox/*
+env/*
+*.*~
+*.dbg
+*.pyc
+*.swp
+
+
+
