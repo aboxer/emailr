@@ -6,7 +6,7 @@ This is a bunch of programs to manage emails for my PMC ride. It consists of the
 * addGrp.py - add names and email address from a list to database group
 * sendThx.py - send customized thank you email. NOTE: always run before sendRq.py
 * sendRq.py - fetch names and emails from database and send customized request email
-* rmvDb.py - remove names and email address from a list to database
+* rmRec.py - remove records if they have never given
 * getStats.py - get various stats about database
 
 ## email data base structure
@@ -81,7 +81,7 @@ Picks rqNum people from emailDb.json according to the following rules.
 
 Send the selected people a customized request for their group and update their giveCt and lastRq.
 
-##rmvDb.py
+##rmRec.py
 
 >python rmvDb.py rmvNms.txt > dbg.txt
 
@@ -91,5 +91,5 @@ email
 .
 .
 
-If there is a database record matching that email, remove the whole record.
+If there is a database record matching that email, remove the whole record if they have never donated.
 
