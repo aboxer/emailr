@@ -62,7 +62,7 @@ msc = miscellaneous
 >python sendThx.py thxEmails.txt > dbg.txt
 
 Reads thxEmails.txt file of the following structure.
-email - amount
+email, amount
 .
 .
 
