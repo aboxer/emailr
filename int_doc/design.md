@@ -3,7 +3,7 @@
 This is a bunch of programs to manage emails for my PMC ride. It consists of the following:
 
 * setDb.py - add full records to database
-* addDb.py - add names and email address from a list to database
+* addGrp.py - add names and email address from a list to database group
 * sendThx.py - send customized thank you email. NOTE: always run before sendRq.py
 * sendRq.py - fetch names and emails from database and send customized request email
 * rmvDb.py - remove names and email address from a list to database
@@ -37,13 +37,14 @@ emailsSz: int,    #size of email list
 giversCt: int,    #count of people who have donated
 totAmt:float}     #total amount given
 
-##addDb.py
+##addGrp.py
 
->python addDb.py newNms.txt > dbg.txt
+>python addGrp.py group newNms.txt > dbg.txt
+
+put the group name in the text file name so you know what group you are adding to
 
 Reads newNms.txt file of the following structure.
-grp                    #used to decide which customized email to send
-first mid last - email
+first mid last , email #middle name or initial is optional
 .
 .
 .
