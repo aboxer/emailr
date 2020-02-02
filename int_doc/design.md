@@ -2,6 +2,7 @@
 
 This is a bunch of programs to manage emails for my PMC ride. It consists of the following:
 
+* setDb.py - add full records to database
 * addDb.py - add names and email address from a list to database
 * sendThx.py - send customized thank you email. NOTE: always run before sendRq.py
 * sendRq.py - fetch names and emails from database and send customized request email
@@ -16,10 +17,10 @@ emailDb.json is a json list of the following structure.
   email : string,     #email address
   grp : string,       #group of people used to select customizable message
   rqCt : int,         #number of requests made to this person
-  lastRq : string,    #date of last request
+  lastRq : int,       #timestamp of last request
   totAmt: float,      #total amount given
-  lastGv : string,    #date of last give
-  gvCt : int},        #number of times person has been thanked
+  lastGv : int,       #timestamp of last give
+  gvCt : int},        #number of times person has given
   .                   #another email record just like the one above
   .
   {}                  #last email record
@@ -64,13 +65,13 @@ email - amount
 .
 .
 
-Send the selected people the customized thanks for their group and update their thxCt and totAmt.
+Send the selected people the customized thanks for their group and update their gvCt and totAmt.
 
 ##sendRq.py
 
->python sendRq.py rqNum days > dbg.txt
+>python sendRq.py  [force] > dbg.txt
 
-NOTE: checks that stats database to see if sendThx.py has been run after the previous sendTq.py
+if force argument is excluded and there haven't been any donations since the last sendRq then exit. Run sendThx to update donation info. The run sendRq again. If there are no donations to update, run sendRq with the force argument.
 
 Picks rqNum people from emailDb.json according to the following rules.
 * Ignore anyone who has already donated.
