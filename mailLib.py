@@ -85,32 +85,115 @@ def send_message(service, user_id, message):
   except HttpError as error:
     print('An error occurred: %s' % error)
 
+###################### stuff related to database model class ###############################
 
+#convert a month/day/year string into a unix time stamp
 def str2ts(s):
   t = time.mktime(datetime.datetime.strptime(s, "%m/%d/%Y").timetuple())
   return int(t)
 
-def prStats(db):
-  lastGv = 0
-  lastRq = 0
-  totAmt = 0.0
-  giversCt = 0
-  for rec in db:
-    if 'lastGv' in rec and rec['lastGv'] > lastGv:
-      lastGv = rec['lastGv']
-    if 'lastRq' in rec and rec['lastRq'] > lastRq:
-      lastRq = rec['lastRq']
-    if 'totAmt' in rec and rec['totAmt'] != 0.0:
-      giversCt += 1
-      totAmt += rec['totAmt']
-    print(rec)
+#email database class
+class emailDb:
+  def __init__(self,emailDb):
+    #open existing database or create a new one
+    self.dbNm = emailDb
+    try:
+      dbf = open(self.dbNm, 'r')
+      r = dbf.read()  #read in all the bytes into one string
+      self.db = json.loads(r)
+      dbf.close()
+    except:
+      self.db = []
 
-  print('curTime = ',datetime.datetime.fromtimestamp(int(time.time())))
-  print('lastGv = ',datetime.datetime.fromtimestamp(lastGv))
-  print('lastRq = ',datetime.datetime.fromtimestamp(lastRq))
-  print('totAmt = ',totAmt)
-  print('giversCt = ',giversCt)
-  print('emailSz = ',len(db))
+  #write out the database
+  def exitDb(self):
+    dbf = open(self.dbNm, 'w')
+    json.dump(self.db,dbf)
+    dbf.close()
+  
+  #get database stats
+  def prStats(self):
+    lastGv = 0
+    lastRq = 0
+    totAmt = 0.0
+    giversCt = 0
+    for rec in self.db:
+      if 'lastGv' in rec and rec['lastGv'] > lastGv:
+        lastGv = rec['lastGv']
+      if 'lastRq' in rec and rec['lastRq'] > lastRq:
+        lastRq = rec['lastRq']
+      if 'totAmt' in rec and rec['totAmt'] != 0.0:
+        giversCt += 1
+        totAmt += rec['totAmt']
+      print(rec)
+
+    print('curTime = ',datetime.datetime.fromtimestamp(int(time.time())))
+    print('lastGv = ',datetime.datetime.fromtimestamp(lastGv))
+    print('lastRq = ',datetime.datetime.fromtimestamp(lastRq))
+    print('totAmt = ',totAmt)
+    print('giversCt = ',giversCt)
+    print('emailSz = ',len(self.db))
+
+
+  #initialize database with existing records
+  def setDb(self,setList):
+    try:
+      inf = open(setList,'r')
+    except:
+      return 'ERR - not found ' + setList
+
+    for line in inf:
+      rec = {}
+      dat = line.split(',')
+      rec['fullNm'] = dat[0].strip()
+      rec['email'] = dat[1].strip()
+      rec['grp'] = dat[2].strip()
+      rec['rqCt'] = int(dat[3].strip())
+      rec['lastRq'] = str2ts(dat[4].strip())
+      rec['totAmt'] = float(dat[5].strip())
+      rec['lastGv'] = str2ts(dat[6].strip())
+      rec['gvCt'] = int(dat[7].strip())
+      self.db.append(rec)
+  
+
+  #add new email address to database
+  def addGrp(self,args):
+    grp = args[1]
+    try:
+      inf = open(args[2],'r')
+    except:
+      return 'ERR - not found ' + args[2]
+
+    for line in inf:
+      dat = line.split(',')
+      fullNm = dat[0].strip()
+      email = dat[1].strip()
+      for rec in self.db:
+        if email == rec['email']:  #ignore duplicates
+          break
+      else:  #add a record - other fields will be added by other tools
+        newRec = {}
+        newRec['fullNm'] = fullNm
+        newRec['email'] = email
+        newRec['grp'] = grp
+        self.db.append(newRec)
+
+  #remove records from database
+  def rmRec(self,args):
+    try:
+      inf = open(args[1],'r')
+    except:
+      return 'ERR - not found ' + args[1]
+
+    for line in inf:
+      email = line.strip()
+      for i in range(len(self.db)):
+        rec = self.db[i]
+        if email == rec['email'] and 'lastGv' not in rec:  #this email has never given
+          self.db.pop(i)
+          break
+
+
 #srv = create_service()
 #msg = create_message('aaron.boxer@gmail.com','aboxer51@yahoo.com','test','test message profile.pmc.org/AB0492')
 #send_message(srv,'me',msg)
