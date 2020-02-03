@@ -1,10 +1,9 @@
 import mailLib
 
 ed = mailLib.emailDb('data/emailDb.json')
-gm = mailLib.gmailr()
+gm = mailLib.gmailr(ed)
 
 rqList = ed.getRqs()
-dnList = gm.send_message(rqList)
-ed.updRqs(dnList)
+gm.send_message(rqList)
 ed.prStats()
 ed.exitDb()

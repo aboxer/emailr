@@ -42,7 +42,8 @@ def create_message(sender, to, subject, message_text):
 
 
 class gmailr:
-  def __init__(self):
+  def __init__(self,db):
+    self.db = db
     """Shows basic usage of the Gmail API.
     Lists the user's Gmail labels.
     """
@@ -80,16 +81,19 @@ class gmailr:
     Returns:
       Sent Message.
     """
-    dnList = []
     for msg in msgList:
       try:
         message = (self.service.users().messages().send(userId="me", body=msg[1]).execute())
-        #print('Message Id: %s' % message['id'])
-        dnList.append((msg[0],int(time.time())))
-        #return message
+        idx = msg[0]
+        rec = self.db.getRec(idx)
+        rec['lastRq'] = int(time.time())
+        if 'rqCt' not in rec:
+          rec['rqCt'] = 1
+        else:
+          rec['rqCt'] += 1
+        self.db.setRec(idx,rec)
       except HttpError as error:
         print('An error occurred: %s' % error)
-    return dnList
 
 ###################### stuff related to database model class ###############################
 
@@ -116,6 +120,14 @@ class emailDb:
     dbf = open(self.dbNm, 'w')
     json.dump(self.db,dbf)
     dbf.close()
+
+  #get record
+  def getRec(self,idx):
+    return self.db[idx]
+
+  #set record
+  def setRec(self,idx,rec):
+    self.db[idx] = rec
   
   #get database stats
   def prStats(self):
@@ -217,19 +229,4 @@ class emailDb:
       msg = create_message('aaron.boxer@gmail.com',email,'test',body)
       msgList.append((i,msg))
     return msgList
-
-  def updRqs(self,updList):
-    for upd in updList:
-      idx = upd[0]
-      rec = self.db[idx]
-      self.db[idx]['lastRq'] = upd[1]
-      if 'rqCt' not in rec:
-        self.db[idx]['rqCt'] = 1
-      else:
-        self.db[idx]['rqCt'] += 1
-
-
-#srv = create_service()
-#msg = create_message('aaron.boxer@gmail.com','aboxer51@yahoo.com','test','test message profile.pmc.org/AB0492')
-#send_message(srv,'me',msg)
 
