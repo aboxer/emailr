@@ -12,6 +12,7 @@ import json
 import time
 import datetime
 import msgMkr
+from tabulate import tabulate
 
 ###################### stuff related to gmail model class ###############################
 # If modifying these scopes, delete the file token.pickle.
@@ -144,7 +145,7 @@ class emailDb:
       if 'totAmt' in rec and rec['totAmt'] != 0.0:
         giversCt += 1
         totAmt += rec['totAmt']
-      print(rec)
+      #print(rec)
 
     print('curTime = ',datetime.datetime.fromtimestamp(int(time.time())))
     print('lastGv = ',datetime.datetime.fromtimestamp(lastGv))
@@ -237,4 +238,25 @@ class emailDb:
       msg = create_message('aaron.boxer@gmail.com',email,'test',body)
       msgList.append((i,msg))
     return msgList
+
+  def prTbl(self):
+    cols = ['fullNm','email','grp','rqCt','lastRq','gvCt','lastGv','totAmt','act']
+    tbl = [cols]
+    for rec in self.db:
+      row = []
+      for key in cols:
+        try:
+          val = rec[key]
+        except:
+          val = None
+        if key == 'lastRq' or key == 'lastGv' and val != None:
+          #row.append(datetime.datetime.fromtimestamp(val))
+          row.append(datetime.date.fromtimestamp(val))
+        else:
+          row.append(val)
+      tbl.append(row)
+    niceTbl =  tabulate(tbl,headers='firstrow')
+    print(niceTbl)
+
+
 
