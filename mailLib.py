@@ -11,6 +11,7 @@ import sys
 import json
 import time
 import datetime
+import msgMkr
 
 ###################### stuff related to gmail model class ###############################
 # If modifying these scopes, delete the file token.pickle.
@@ -230,7 +231,9 @@ class emailDb:
       rec = self.db[i]
       email = rec['email']
       firstNm = rec['fullNm'].split()[0]   #just first name
-      body = firstNm + ' - test message profile.pmc.org/AB0492'
+      #body = firstNm + ' - test message profile.pmc.org/AB0492'
+      #body = messages.msgs['tsg_rq1']
+      body = msgMkr.mkMsg('tsg_rq1',rec)
       msg = create_message('aaron.boxer@gmail.com',email,'test',body)
       msgList.append((i,msg))
     return msgList
