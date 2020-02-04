@@ -16,6 +16,7 @@ emailDb.json is a json list of the following structure.
   {fullNm : string,   #first mid last
   email : string,     #email address
   grp : string,       #group of people used to select customizable message
+  act: bool           #true if requests are allowed
   rqCt : int,         #number of requests made to this person
   lastRq : int,       #timestamp of last request
   totAmt: float,      #total amount given

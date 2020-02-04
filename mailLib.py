@@ -165,6 +165,10 @@ class emailDb:
       dat = line.split(',')
       rec['fullNm'] = dat[0].strip()
       rec['email'] = dat[1].strip()
+      if dat[8].strip().lower() == 'true':
+        rec['act'] = True
+      else:
+        rec['act'] = False
       rec['grp'] = dat[2].strip()
       rec['rqCt'] = int(dat[3].strip())
       rec['lastRq'] = str2ts(dat[4].strip())
@@ -193,6 +197,7 @@ class emailDb:
         newRec = {}
         newRec['fullNm'] = fullNm
         newRec['email'] = email
+        newRec['act'] = True
         newRec['grp'] = grp
         self.db.append(newRec)
 
@@ -217,7 +222,7 @@ class emailDb:
     sendList = []
     for i in range(len(self.db)):
       rec = self.db[i]
-      if 'lastRq' not in rec:
+      if rec['act'] and 'lastRq' not in rec:
         sendList.append(i)
 
     msgList = []
