@@ -9,9 +9,11 @@ from email.mime.text import MIMEText
 import base64
 import sys
 import json
+import csv
 import time
 import datetime
 import msgMkr
+import re
 from tabulate import tabulate
 
 ###################### stuff related to gmail model class ###############################
@@ -85,11 +87,11 @@ class gmailr:
     """
     for msg in msgList:
       try:
-        message = (self.service.users().messages().send(userId="me", body=msg[1]).execute())
+        messagstorye = (self.service.users().messages().send(userId="me", body=msg[1]).execute())
         idx = msg[0]
         rec = self.db.getRec(idx)
         rec['lastRq'] = int(time.time())
-        if 'rqCt' not in rec:
+        if rec['rqCt'] == None:
           rec['rqCt'] = 1
         else:
           rec['rqCt'] += 1
@@ -100,28 +102,114 @@ class gmailr:
 ###################### stuff related to database model class ###############################
 
 #convert a month/day/year string into a unix time stamp
-def str2ts(s):
-  t = time.mktime(datetime.datetime.strptime(s, "%m/%d/%Y").timetuple())
+def str2ts(x):
+  if re.search(':',x) == None: #colons indicates exact time
+    t = time.mktime(datetime.datetime.strptime(x, "%m/%d/%Y").timetuple())
+  else:
+    t = time.mktime(datetime.datetime.strptime(x, "%m/%d/%Y %H:%M:%S").timetuple())
+  #t = time.mktime(datetime.datetime.strptime(x, "%m/%d/%Y %H:%M:%S").timetuple())
   return int(t)
+
+#convert csv file to database
+def csv2db(infile):
+  db = []
+  with open(infile, newline='') as csvfile:
+    spamreader = csv.reader(csvfile)
+    flag = False
+    for row in spamreader:
+      row = [x.strip(' ') for x in row] #strip white space from each element in row
+      if flag == False:
+        cols = row
+        flag = True
+      else:
+        rec = {}
+        for col in cols:
+          val = row.pop(0)
+          if val == '':
+            val = None
+          else:
+            if col == 'lastRq' or col == 'lastGv': #convert PMC format(mm/dd/yyyy) to unix timestamp
+              val = str2ts(val)
+            if col == 'rqCt' or col == 'rqCt': #
+              val = int(val)
+            elif col == 'totAmt':   
+              val = float(val)
+            elif col == 'act':   
+              if val.lower() == 'true':
+                val = True
+              else:
+                val = False
+          rec[col] = val
+        db.append(rec)
+    return db
+
+#convert database to csv file
+def db2csv(db,outfile):
+  with open(outfile, 'w', newline='') as csvfile:
+    spamwriter = csv.writer(csvfile)
+    cols = list(db[0].keys())  #all the rows in the database have the same keys
+    spamwriter.writerow(cols)
+    for rec in db:
+      row = []
+      for col in cols:
+        val = rec[col]
+        if (col == 'lastRq' or col == 'lastGv') and val != None: #convert unix timestamp to mm/dd/yyyy
+          val = datetime.datetime.fromtimestamp(val).strftime('%m/%d/%Y %H:%M:%S')
+          #val = datetime.date.fromtimestamp(val).strftime('%m/%d/%Y')
+        elif col == 'act':   
+          if val == True:
+            val = 'True'
+          else:
+            val = 'False'
+        row.append(val)
+      spamwriter.writerow(row)
+
+#print database to table
+def db2Tbl(db):
+  cols = list(db[0].keys())  #all the rows in the database have the same keys
+  tbl = [cols]
+  for rec in db:
+    row = []
+    for col in cols:
+      try:
+        val = rec[col]
+        if col == 'lastRq' or col == 'lastGv': #convert unix timestamp to mm/dd/yyyy
+          val = datetime.datetime.fromtimestamp(val).strftime('%m/%d/%Y %H:%M:%S')
+        elif col == 'totAmt':
+          val = str(val)
+      except:
+        val = None
+      row.append(val)
+    tbl.append(row)
+  niceTbl =  tabulate(tbl,headers='firstrow',floatfmt="5.2f")
+  #print(niceTbl)
+  return niceTbl 
+
+ 
 
 #email database class
 class emailDb:
   def __init__(self,emailDb):
     #open existing database or create a new one
+    #The database csv must have all the columns filled even if some are filled with None
     self.dbNm = emailDb
+    self.dbCols = ['fullNm','email','grp','rqCt','lastRq','gvCt','lastGv','totAmt','act']
     try:
-      dbf = open(self.dbNm, 'r')
-      r = dbf.read()  #read in all the bytes into one string
-      self.db = json.loads(r)
-      dbf.close()
+      self.db = csv2db(self.dbNm)
+      #dbf = open(self.dbNm, 'r')
+      #r = dbf.read()  #read in all the bytes into one string
+      #self.db = json.loads(r)
+      #dbf.close()
     except:
       self.db = []
 
   #write out the database
   def exitDb(self):
-    dbf = open(self.dbNm, 'w')
-    json.dump(self.db,dbf)
-    dbf.close()
+    #The database csv must have all the columns filled even if some are filled with None
+    db2csv(self.db,self.dbNm) #NOTE: Add backup to dropbox
+    #dbf = open(self.dbNm, 'w')
+    #json.dump(self.db,dbf)
+    #dbf.close()
 
   #get record
   def getRec(self,idx):
@@ -130,6 +218,12 @@ class emailDb:
   #set record
   def setRec(self,idx,rec):
     self.db[idx] = rec
+
+  def emptyRec(self):
+    rec = {}
+    for col in self.dbCols:
+      rec[col] = None
+    return rec
   
   #get database stats
   def prStats(self):
@@ -138,11 +232,11 @@ class emailDb:
     totAmt = 0.0
     giversCt = 0
     for rec in self.db:
-      if 'lastGv' in rec and rec['lastGv'] > lastGv:
+      if rec['lastGv'] != None and rec['lastGv'] > lastGv:
         lastGv = rec['lastGv']
-      if 'lastRq' in rec and rec['lastRq'] > lastRq:
+      if rec['lastRq'] != None and rec['lastRq'] > lastRq:
         lastRq = rec['lastRq']
-      if 'totAmt' in rec and rec['totAmt'] != 0.0:
+      if rec['totAmt'] != None and rec['totAmt'] != 0.0:
         giversCt += 1
         totAmt += rec['totAmt']
       #print(rec)
@@ -158,47 +252,36 @@ class emailDb:
   #initialize database with existing records
   def setDb(self,setList):
     try:
-      inf = open(setList,'r')
+      rows = csv2db(setList)
+      #inf = open(setList,'r')
     except:
       return 'ERR - not found ' + setList
 
-    for line in inf:
-      rec = {}
-      dat = line.split(',')
-      rec['fullNm'] = dat[0].strip()
-      rec['email'] = dat[1].strip()
-      if dat[8].strip().lower() == 'true':
-        rec['act'] = True
+    #any non-existing fields are set to a default
+    for row in rows:
+      for rec in self.db:
+        if row['email'] == rec['email']:  #ignore duplicates
+          break
       else:
-        rec['act'] = False
-      rec['grp'] = dat[2].strip()
-      rec['rqCt'] = int(dat[3].strip())
-      rec['lastRq'] = str2ts(dat[4].strip())
-      rec['totAmt'] = float(dat[5].strip())
-      rec['lastGv'] = str2ts(dat[6].strip())
-      rec['gvCt'] = int(dat[7].strip())
-      self.db.append(rec)
-  
+        self.db.append(row)
 
   #add new email address to database
   def addGrp(self,args):
     grp = args[1]
     try:
-      inf = open(args[2],'r')
+      #inf = open(args[2],'r')
+      adds = csv2db(args[2])
     except:
       return 'ERR - not found ' + args[2]
 
-    for line in inf:
-      dat = line.split(',')
-      fullNm = dat[0].strip()
-      email = dat[1].strip()
+    for add in adds:
       for rec in self.db:
-        if email == rec['email']:  #ignore duplicates
+        if add['email'] == rec['email']:  #ignore duplicates
           break
       else:  #add a record - other fields will be added by other tools
-        newRec = {}
-        newRec['fullNm'] = fullNm
-        newRec['email'] = email
+        newRec = self.emptyRec()
+        newRec['fullNm'] = add['fullNm']
+        newRec['email'] = add['email']
         newRec['act'] = True
         newRec['grp'] = grp
         self.db.append(newRec)
@@ -206,15 +289,15 @@ class emailDb:
   #remove records from database
   def rmRec(self,args):
     try:
-      inf = open(args[1],'r')
+      rmvs = csv2db(args[1])
     except:
       return 'ERR - not found ' + args[1]
 
-    for line in inf:
-      email = line.strip()
+    for rmv in rmvs:
+      email = rmv['email']
       for i in range(len(self.db)):
         rec = self.db[i]
-        if email == rec['email'] and 'lastGv' not in rec:  #this email has never given
+        if email == rec['email'] and rec['lastGv'] == None :  #this email has never given
           self.db.pop(i)
           break
 
@@ -224,7 +307,7 @@ class emailDb:
     sendList = []
     for i in range(len(self.db)):
       rec = self.db[i]
-      if rec['act'] and 'lastRq' not in rec:
+      if rec['act'] == True and rec['lastRq'] == None:
         sendList.append(i)
 
     msgList = []
@@ -232,6 +315,7 @@ class emailDb:
       rec = self.db[i]
       email = rec['email']
       firstNm = rec['fullNm'].split()[0]   #just first name
+      print(rec['fullNm'],email)
       #body = firstNm + ' - test message profile.pmc.org/AB0492'
       #body = messages.msgs['tsg_rq1']
       body = msgMkr.mkMsg('tsg_rq1',rec)
@@ -240,22 +324,23 @@ class emailDb:
     return msgList
 
   def prTbl(self):
-    cols = ['fullNm','email','grp','rqCt','lastRq','gvCt','lastGv','totAmt','act']
-    tbl = [cols]
-    for rec in self.db:
-      row = []
-      for key in cols:
-        try:
-          val = rec[key]
-        except:
-          val = None
-        if key == 'lastRq' or key == 'lastGv' and val != None:
-          #row.append(datetime.datetime.fromtimestamp(val))
-          row.append(datetime.date.fromtimestamp(val))
-        else:
-          row.append(val)
-      tbl.append(row)
-    niceTbl =  tabulate(tbl,headers='firstrow')
+#    cols = ['fullNm','email','grp','rqCt','lastRq','gvCt','lastGv','totAmt','act']
+#    tbl = [cols]
+#    for rec in self.db:
+#      row = []
+#      for key in cols:
+#        try:
+#          val = rec[key]
+#        except:
+#          val = None
+#        if key == 'lastRq' or key == 'lastGv' and val != None:
+#          #row.append(datetime.datetime.fromtimestamp(val))
+#          row.append(datetime.date.fromtimestamp(val))
+#        else:
+#          row.append(val)
+#      tbl.append(row)
+    #niceTbl =  tabulate(tbl,headers='firstrow')
+    niceTbl =  db2Tbl(self.db)
     print(niceTbl)
 
 

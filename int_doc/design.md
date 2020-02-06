@@ -1,96 +1,106 @@
-# Emailer Tools Design
+#Emailer Tools Design
 
-This is a bunch of programs to manage emails for my PMC ride. It consists of the following:
+This is a program to manage emails for my PMC ride. It has a command line of the following form.
 
-* setDb.py - add full records to database
-* addGrp.py - add names and email address from a list to database group
-* sendThx.py - send customized thank you email. NOTE: always run before sendRq.py
-* sendRq.py - fetch names and emails from database and send customized request email
-* rmRec.py - remove records if they have never given
-* getStats.py - get various stats about database
+>python emailr cmd -options filenames
 
-## email data base structure
-emailDb.json is a json list of the following structure.
+It has the following commands.
 
-[                     #email list containing email records of the following form
-  {fullNm : string,   #first mid last
-  email : string,     #email address
-  grp : string,       #group of people used to select customizable message
-  act: bool           #true if requests are allowed
-  rqCt : int,         #number of requests made to this person
-  lastRq : int,       #timestamp of last request
-  totAmt: float,      #total amount given
-  lastGv : int,       #timestamp of last give
-  gvCt : int},        #number of times person has given
-  .                   #another email record just like the one above
-  .
-  {}                  #last email record
-]
+* ag - add a group of names and email address from a list to database group
+* sr - fetch names and emails from database and send customized request email
+* st - send customized thank you email. NOTE: always run before sendRq.py
+* rg - remove records if they have never given money
+* mr - make report
 
-##getStats.py
+A help message is displayed if the command is not recognized or omitted.
 
->python getStats.py > stats.txt
+##email data base structure
+emailDb.csv is a csv file. The required first row is the header with the following keywords. There is a row for each person in the same order as the hearer
 
-Output statistics from stats.json which has the following structure.
-{lastThx: string, #last time sendThx.py was run
-lastRq:string,    #last time sendRq was run
-emailsSz: int,    #size of email list
-giversCt: int,    #count of people who have donated
-totAmt:float}     #total amount given
+keyword  description
+-------------------------------------------------------------------------------------
+fullNm   #the first word is considered the first name. Any number of wrods is allowed
+email    #email address
+grp      #group of people used to select customizable message
+rqCt     #integer of requests made to this person
+lastRq   #mm/dd/yyyy of last request
+amt      #float of total amount given
+lastGv   #mm/dd/yyyy of last donation
+gvCt     #integer of times person has given
+act      #true = requests allowed, false = requests not allowed
 
-##addGrp.py
+##Add Group - ag
+>python emailr.py ag -group newNms.csv > dbg.txt
 
->python addGrp.py group newNms.txt > dbg.txt
+Reads newNms.csv file with the following first row header and adds all the people in it to the same group
 
-put the group name in the text file name so you know what group you are adding to
+keyword  description
+-------------------------------------------------------------------------------------
+fullNm   #the first word is considered the first name. Any number of wrods is allowed
+email    #email address
 
-Reads newNms.txt file of the following structure.
-first mid last , email #middle name or initial is optional
-.
-.
-.
-
-If there is a database record matching that name and email it is a duplicate so ignore it. I don't want to send multiple different requests to the same person. Otherwise add a record to the emailDB.json, setting fullNm, email and grp. The other fields will be created by other tools 
+If there is a database record matching that name and email it is a duplicate so ignore it. I don't want to send multiple different requests to the same person. Otherwise add a record to the emailDB.json, setting fullNm, email, grp and act=True. The other fields will be created by other tools 
 
 groups I've identified so far 
-tsg = torah study group
-stl = shir tikva general
-lhs = lawrence high school
-msc = miscellaneous
+* tsg = torah study group
+* stl = shir tikva general
+* lhs = lawrence high school
+* msc = miscellaneous
 
-##sendThx.py
+TIP: put the group name in the text file name so you know what group you are adding to
 
->python sendThx.py thxEmails.txt > dbg.txt
+##Send Request - sr
+>python emailr.py sr -s -num > dbg.txt
 
-Reads thxEmails.txt file of the following structure.
-email, amount
-.
-.
+The list of database entries that changes is sent to stdout.
+The actual emails wont be sent if -s is omitted
+The number of emails sent is specified by -num
 
-Send the selected people the customized thanks for their group and update their gvCt and totAmt.
+If lastRq for the whole database is later than lastGv the email gives you a prompt asking asking if you want to continue.
 
-##sendRq.py
+>No donations since last request. Continue Y/n? :
 
->python sendRq.py  [force] > dbg.txt
-
-if force argument is excluded and there haven't been any donations since the last sendRq then exit. Run sendThx to update donation info. The run sendRq again. If there are no donations to update, run sendRq with the force argument.
-
-Picks rqNum people from emailDb.json according to the following rules.
-* Ignore anyone who has already donated.
-* Ignore anyone who has received a request within specified days
+Picks num people from emailDb.csv according to the following rules.
+* pick only people who have not donated
+* Ignore anyone who has received a request within 14 days
 * prioritize people with lowest rqCt
 
-Send the selected people a customized request for their group and update their giveCt and lastRq.
+Send the selected people a customized request for their group and update their rqCt and lastRq. There are three customizable messages for each group. They are the following
 
-##rmRec.py
+* first request
+* nth request
+* last request 
 
->python rmvDb.py rmvNms.txt > dbg.txt
+##Send Thanks - st
+>python emailr.py st -s thxGrp.csv > dbg.txt
 
-Reads rmvNms.txt file of the following structure.
-email
-.
-.
-.
+Send a customized thank you to everyone on the list. Ignore entries where the lastGv date is the same or earlier than the one already in the database. Update amt, gvCt and lastGv with the current time. Unmatchable emails are ignored but are sent to stdout.
+
+The list of database entries that changes is sent to stdout.
+The actual emails wont be sent if -s is omitted
+
+Reads thxGrp.csv file with the following first row header.
+
+keyword  description
+-------------------------------------------------------------------------------------
+email    #email address
+lastGv   #date of donation
+amt      #float of amount given
+
+
+##Remove Group - rg
+>python emailr.py rg rmGrp.csv > dbg.txt
 
 If there is a database record matching that email, remove the whole record if they have never donated.
+The emailr gives you a prompt asking asking if you want to continue.
 
+Reads rmGrp.csv file with the following first row header.
+
+keyword  description
+-------------------------------------------------------------------------------------
+email    #email address
+
+##Meke Report - mr
+>python emailr.py mk anyDb.csv > dbg.txt
+
+Does comparison of any  database file to emailDB and outputs a report to stdout
