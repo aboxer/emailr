@@ -12,6 +12,8 @@ I have a webpage on the PMC website with some of my thoughts about Alan and some
 
 thanks, see you at Torah Study,
 Aaron
+
+PS: My address on this email is different from the one in the Shir Tikvah directory because I am using a different account to manage my PMC communications. I saw today that there has been some type of email scam sent to Shir Tikvah members in Rabbi Cari's name. If you are concerned about this email, let me know using my address in the Shir Tikvah directory under Lawrence Boxer (the usual one you have for me) or see me at Torah Study on Saturday.
 """
 }
 
