@@ -200,8 +200,10 @@ class emailDb:
       #r = dbf.read()  #read in all the bytes into one string
       #self.db = json.loads(r)
       #dbf.close()
-    except:
+    except: #create empty file for database
       self.db = []
+      nf = open(self.dbNm,'w')
+      nf.close()
 
   #write out the database
   def exitDb(self):
@@ -266,11 +268,10 @@ class emailDb:
         self.db.append(row)
 
   #add new email address to database
-  def addGrp(self,args):
-    grp = args[1]
+  def addGrp(self,grp,fileNm):
     try:
       #inf = open(args[2],'r')
-      adds = csv2db(args[2])
+      adds = csv2db(fileNm)
     except:
       return 'ERR - not found ' + args[2]
 
@@ -287,9 +288,9 @@ class emailDb:
         self.db.append(newRec)
 
   #remove records from database
-  def rmRec(self,args):
+  def rmRec(self,arg):
     try:
-      rmvs = csv2db(args[1])
+      rmvs = csv2db(arg)
     except:
       return 'ERR - not found ' + args[1]
 
@@ -315,13 +316,13 @@ class emailDb:
       rec = self.db[i]
       email = rec['email']
       firstNm = rec['fullNm'].split()[0]   #just first name
-      print(rec['fullNm'],email)
+      #print(rec['fullNm'],email)
       #body = firstNm + ' - test message profile.pmc.org/AB0492'
       #body = messages.msgs['tsg_rq1']
       body = msgMkr.mkMsg('tsg_rq1',rec)
       msg = create_message('aaron.boxer@gmail.com',email,'test',body)
       msgList.append((i,msg))
-    return msgList
+    return sendList,msgList
 
   def prTbl(self):
 #    cols = ['fullNm','email','grp','rqCt','lastRq','gvCt','lastGv','totAmt','act']

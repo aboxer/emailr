@@ -6,40 +6,44 @@ This is a program to manage emails for my PMC ride. It has a command line of the
 
 It has the following commands.
 
+* ld - load some new records
 * ag - add a group of names and email address from a list to database group
+* ch - change fields in existing records
+* rr - remove records if they have never given money
 * sr - fetch names and emails from database and send customized request email
 * st - send customized thank you email. NOTE: always run before sendRq.py
-* rg - remove records if they have never given money
 * mr - make report
 
 A help message is displayed if the command is not recognized or omitted.
 
+Running emailr with no emailDb.csv will create a blank one, even if there is no valid command
+
 ##email data base structure
 emailDb.csv is a csv file. The required first row is the header with the following keywords. There is a row for each person in the same order as the hearer
 
-keyword  description
--------------------------------------------------------------------------------------
-fullNm   #the first word is considered the first name. Any number of wrods is allowed
-email    #email address
-grp      #group of people used to select customizable message
-rqCt     #integer of requests made to this person
-lastRq   #mm/dd/yyyy of last request
-amt      #float of total amount given
-lastGv   #mm/dd/yyyy of last donation
-gvCt     #integer of times person has given
-act      #true = requests allowed, false = requests not allowed
+keyword  description                                                        default
+------------------------------------------------------------------------------------------------------
+fullNm   #the first word is considered the first name.                      None
+email    #email address                                                     required
+grp      #group of people used to select customizable message               None
+rqCt     #integer of requests made to this person                           0
+lastRq   #mm/dd/yyyy of last request                                        None
+gvCt     #integer of times person has given                                 0
+lastGv   #mm/dd/yyyy of last donation                                       None
+totAmt   #float of total amount given                                       0.0
+act      #true = requests allowed, false = requests not allowed             True
+
+##Load Records - ld
+>python emailr.py ld  ldNms.csv > dbg.txt
+
+Reads ldNms.csv file and adds the records to the database. email column MUST be included. Any missing columns are set to the default.
 
 ##Add Group - ag
 >python emailr.py ag -group newNms.csv > dbg.txt
 
-Reads newNms.csv file with the following first row header and adds all the people in it to the same group
+Reads newNms.csv file and adds the records to the database. email column MUST be included. grp column will be ignored if included and grp will be set to -group. Any missing columns are set to the default.
 
-keyword  description
--------------------------------------------------------------------------------------
-fullNm   #the first word is considered the first name. Any number of wrods is allowed
-email    #email address
-
-If there is a database record matching that name and email it is a duplicate so ignore it. I don't want to send multiple different requests to the same person. Otherwise add a record to the emailDB.json, setting fullNm, email, grp and act=True. The other fields will be created by other tools 
+If there is a database record matching that email it is a duplicate so ignore it. I don't want to send multiple different requests to the same person.
 
 groups I've identified so far 
 * tsg = torah study group
@@ -48,6 +52,20 @@ groups I've identified so far
 * msc = miscellaneous
 
 TIP: put the group name in the text file name so you know what group you are adding to
+
+##Change Records - ch
+>python emailr.py ch  chNms.csv > dbg.txt
+
+Reads chNms.csv file and change existing records to the database. email column MUST be included and cannot be changed.
+
+##Remove Records - rr
+>python emailr.py rr  rmNms.csv > dbg.txt
+
+Reads rmNms.csv file and remove the records to the database. email column MUST be included. All others will be ignored.
+
+Records for people who have donated money cannot be removed. They can be set inactive so they get no more emails
+
+TIP: if you REALLY must remove a person who has donated money, First change gvCt to zero and then remove it
 
 ##Send Request - sr
 >python emailr.py sr -s -num > dbg.txt
@@ -85,20 +103,7 @@ keyword  description
 -------------------------------------------------------------------------------------
 email    #email address
 lastGv   #date of donation
-amt      #float of amount given
-
-
-##Remove Group - rg
->python emailr.py rg rmGrp.csv > dbg.txt
-
-If there is a database record matching that email, remove the whole record if they have never donated.
-The emailr gives you a prompt asking asking if you want to continue.
-
-Reads rmGrp.csv file with the following first row header.
-
-keyword  description
--------------------------------------------------------------------------------------
-email    #email address
+totAmt   #float of amount given
 
 ##Meke Report - mr
 >python emailr.py mk anyDb.csv > dbg.txt
