@@ -18,6 +18,8 @@ for i in range(1,len(sys.argv)):
     elif re.match('\d+',opt):
       sndCt = opt
       print('sndCt = ',opt)
+    else:
+      grp = opt
   else:
     cmd = arg
     print('cmd = ',arg)
@@ -30,9 +32,11 @@ if cmd == 'mr':
   ed.prTbl()
   upd_flag = False #don't overwrite database just to get a report
 elif cmd == 'ag':
-  ed.addGrp(opt,fileNm)
+  ed.addGrp(grp,fileNm)
 elif cmd == 'ld':
   ed.setDb(fileNm)
+elif cmd == 'ch':
+  ed.chgDb(fileNm)
 elif cmd == 'rr':
   ed.rmRec(fileNm)
 elif cmd == 'sr':

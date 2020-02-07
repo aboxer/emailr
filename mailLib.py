@@ -267,6 +267,23 @@ class emailDb:
       else:
         self.db.append(row)
 
+
+  #change database fields of existing records
+  def chgDb(self,setList):
+    try:
+      rows = csv2db(setList)
+      #inf = open(setList,'r')
+    except:
+      return 'ERR - not found ' + setList
+
+    #any non-existing fields are set to a default
+    for row in rows:
+      for rec in self.db:
+        if row['email'] == rec['email']:  #found the record
+          for col in row:
+            if col != 'email':
+              rec[col] = row[col]
+
   #add new email address to database
   def addGrp(self,grp,fileNm):
     try:
@@ -320,7 +337,7 @@ class emailDb:
       #body = firstNm + ' - test message profile.pmc.org/AB0492'
       #body = messages.msgs['tsg_rq1']
       body = msgMkr.mkMsg('tsg_rq1',rec)
-      msg = create_message('aaron.boxer@gmail.com',email,'test',body)
+      msg = create_message('aaron.boxer@gmail.com',email,' My PMC Ride for Alan Finder - (Sorry I forgot Check Info)',body)
       msgList.append((i,msg))
     return sendList,msgList
 

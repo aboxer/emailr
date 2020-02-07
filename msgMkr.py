@@ -10,6 +10,8 @@ I'm beginning to raise funds for my Pan Mass Challenge ride in memory of Alan. I
 
 I have a webpage on the PMC website with some of my thoughts about Alan and some pictures of him , including one of us. You can click on this link, profile.pmc.org/AB0492 if you'd like to donate by credit card.
 
+If you want to donate by check or Donor Advised Fund, here is the link on how to do it. https://www.pmc.org/ways-to-give
+
 thanks, see you at Torah Study,
 Aaron
 
