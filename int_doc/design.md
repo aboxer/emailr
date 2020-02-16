@@ -16,7 +16,7 @@ It has the following commands.
 
 A help message is displayed if the command is not recognized or omitted.
 
-Running emailr with no emailDb.csv will create a blank one, even if there is no valid command
+Running emailr with no emailDb.csv will create a blank one, even if there is no valid command. When emailDb.csv is loaded a backup called emailBk is made. When emailr is exited, emailBk is saved in the same directory as as emailDb in case emaildDb got screwed up. emailDb.csv is also written to dropbox as a safety measure against HW failure
 
 ##email data base structure
 emailDb.csv is a csv file. The required first row is the header with the following keywords. There is a row for each person in the same order as the hearer
@@ -30,6 +30,7 @@ rqCt     #integer of requests made to this person                           0
 lastRq   #mm/dd/yyyy of last request                                        None
 gvCt     #integer of times person has given                                 0
 lastGv   #mm/dd/yyyy of last donation                                       None
+gvMeth   #how was money donated (online,check,etc)                          None
 totAmt   #float of total amount given                                       0.0
 act      #true = requests allowed, false = requests not allowed             True
 

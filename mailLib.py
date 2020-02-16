@@ -121,7 +121,7 @@ def csv2db(infile):
       if flag == False:
         cols = row
         flag = True
-      else:
+      elif len(row) != 0: #skip empty rows
         rec = {}
         for col in cols:
           val = row.pop(0)
@@ -189,29 +189,27 @@ def db2Tbl(db):
 
 #email database class
 class emailDb:
-  def __init__(self,emailDb):
+  def __init__(self,emailDb,emailBk,emailSv):
     #open existing database or create a new one
     #The database csv must have all the columns filled even if some are filled with None
     self.dbNm = emailDb
-    self.dbCols = ['fullNm','email','grp','rqCt','lastRq','gvCt','lastGv','totAmt','act']
+    self.bkNm = emailBk
+    self.svNm = emailSv
+    self.dbCols = ['fullNm','email','grp','rqCt','lastRq','gvCt','lastGv','gvMeth','totAmt','act']
     try:
       self.db = csv2db(self.dbNm)
-      #dbf = open(self.dbNm, 'r')
-      #r = dbf.read()  #read in all the bytes into one string
-      #self.db = json.loads(r)
-      #dbf.close()
     except: #create empty file for database
       self.db = []
       nf = open(self.dbNm,'w')
       nf.close()
+    self.bk = self.db.copy()
 
   #write out the database
   def exitDb(self):
     #The database csv must have all the columns filled even if some are filled with None
-    db2csv(self.db,self.dbNm) #NOTE: Add backup to dropbox
-    #dbf = open(self.dbNm, 'w')
-    #json.dump(self.db,dbf)
-    #dbf.close()
+    db2csv(self.db,self.dbNm) #save updated database
+    db2csv(self.db,self.svNm) #and a copy to dropbox
+    db2csv(self.bk,self.bkNm) #save old database
 
   #get record
   def getRec(self,idx):
