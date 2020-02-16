@@ -290,7 +290,7 @@ class emailDb:
       #inf = open(args[2],'r')
       adds = csv2db(fileNm)
     except:
-      return 'ERR - not found ' + args[2]
+      return 'ERR - not found ' + fileNm
 
     for add in adds:
       for rec in self.db:
@@ -336,8 +336,8 @@ class emailDb:
       #print(rec['fullNm'],email)
       #body = firstNm + ' - test message profile.pmc.org/AB0492'
       #body = messages.msgs['tsg_rq1']
-      body = msgMkr.mkMsg('tsg_rq1',rec)
-      msg = create_message('aaron.boxer@gmail.com',email,' My PMC Ride for Alan Finder - (Sorry I forgot Check Info)',body)
+      body = msgMkr.mkMsg(rec)
+      msg = create_message('aaron.boxer@gmail.com',email,' My PMC Ride for Alan Finder',body)
       msgList.append((i,msg))
     return sendList,msgList
 
