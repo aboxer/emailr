@@ -1,4 +1,6 @@
 import re
+from nameparser import HumanName
+
 
 msgs = {
 #first request to Torah Study Group
@@ -45,8 +47,11 @@ Aaron
 """
 }
 
-def mkMsg(rec):
-  msgId = rec['grp'] + '_rq1'
+def mkMsg(rq,rec):
+  if rq == True:
+    msgId = rec['grp'] + '_rq1'
+  else:
+    msgId = rec['grp'] + '_thx'
   msg = msgs[msgId]
 
   #find all the replaceble fields in the message
@@ -62,8 +67,10 @@ def mkMsg(rec):
     rpl = msg[beg:end]
     fieldNm = msg[beg+1:end-1] #chop off < and >
     if fieldNm == 'firstNm':
-      firstNm = rec['fullNm'].split()[0]   #just first name
-      msg = msg.replace(rpl,firstNm)
+      #firstNm = rec['fullNm'].split()[0]   #just first name
+      name = HumanName(rec['fullNm'])
+      #msg = msg.replace(rpl,firstNm)
+      msg = msg.replace(rpl,name.first)
 
   return msg
  

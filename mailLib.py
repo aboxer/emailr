@@ -15,6 +15,7 @@ import datetime
 import msgMkr
 import re
 from tabulate import tabulate
+#from fuzzywuzzy import fuzz
 
 ###################### stuff related to gmail model class ###############################
 # If modifying these scopes, delete the file token.pickle.
@@ -73,7 +74,7 @@ class gmailr:
     self.service = build('gmail', 'v1', credentials=creds)
 
 
-  def send_message(self, msgList):
+  def send_message(self,rq,msgList):
     """Send an email message.
 
     Args:
@@ -90,11 +91,18 @@ class gmailr:
         messagstorye = (self.service.users().messages().send(userId="me", body=msg[1]).execute())
         idx = msg[0]
         rec = self.db.getRec(idx)
-        rec['lastRq'] = int(time.time())
-        if rec['rqCt'] == None:
-          rec['rqCt'] = 1
+        if rq == True:
+          rec['lastRq'] = int(time.time())
+          if rec['rqCt'] == None:
+            rec['rqCt'] = 1
+          else:
+            rec['rqCt'] += 1
         else:
-          rec['rqCt'] += 1
+          rec['lastGv'] = int(time.time())
+          if rec['gvCt'] == None:
+            rec['gvCt'] = 1
+          else:
+            rec['gvCt'] += 1
         self.db.setRec(idx,rec)
       except HttpError as error:
         print('An error occurred: %s' % error)
@@ -224,8 +232,15 @@ class emailDb:
     for col in self.dbCols:
       rec[col] = None
     return rec
+
+  def getEmail(self,email):
+    for i in range(len(self.db)):
+      if self.db[i]['email'] == email:
+        return i
+    else:
+      return None
   
-  #get database stats
+  #eet database stats
   def prStats(self):
     lastGv = 0
     lastRq = 0
@@ -270,7 +285,6 @@ class emailDb:
   def chgDb(self,setList):
     try:
       rows = csv2db(setList)
-      #inf = open(setList,'r')
     except:
       return 'ERR - not found ' + setList
 
@@ -285,7 +299,6 @@ class emailDb:
   #add new email address to database
   def addGrp(self,grp,fileNm):
     try:
-      #inf = open(args[2],'r')
       adds = csv2db(fileNm)
     except:
       return 'ERR - not found ' + fileNm
@@ -330,32 +343,21 @@ class emailDb:
     for i in sendList:
       rec = self.db[i]
       email = rec['email']
-      firstNm = rec['fullNm'].split()[0]   #just first name
-      #print(rec['fullNm'],email)
-      #body = firstNm + ' - test message profile.pmc.org/AB0492'
-      #body = messages.msgs['tsg_rq1']
-      body = msgMkr.mkMsg(rec)
+      body = msgMkr.mkMsg(True,rec)
       msg = create_message('aaron.boxer@gmail.com',email,' My PMC Ride for Alan Finder',body)
       msgList.append((i,msg))
     return sendList,msgList
 
+  #get Thanks list
+  def getThx(self,idx):
+    rec = self.db[idx]
+    email = rec['email']
+    body = msgMkr.mkMsg(False,rec)
+    #print(body)
+    msg = create_message('aaron.boxer@gmail.com',email,' Thanks for Your Donation to My PMC Ride for Alan Finder',body)
+    return msg
+
   def prTbl(self):
-#    cols = ['fullNm','email','grp','rqCt','lastRq','gvCt','lastGv','totAmt','act']
-#    tbl = [cols]
-#    for rec in self.db:
-#      row = []
-#      for key in cols:
-#        try:
-#          val = rec[key]
-#        except:
-#          val = None
-#        if key == 'lastRq' or key == 'lastGv' and val != None:
-#          #row.append(datetime.datetime.fromtimestamp(val))
-#          row.append(datetime.date.fromtimestamp(val))
-#        else:
-#          row.append(val)
-#      tbl.append(row)
-    #niceTbl =  tabulate(tbl,headers='firstrow')
     niceTbl =  db2Tbl(self.db)
     print(niceTbl)
 
