@@ -1,6 +1,7 @@
 #Create a complete Shir Tikvah email group that excludes special friends
 import re
 import tabulate
+import random
 import csv
 
 #Create database of all emails to exclude from general List
@@ -32,8 +33,9 @@ emailCt = 0
 exCt = 0
 keepCt = 0
 listSz = len(lines)
-shirDb = []
-shirList = [cols]
+#shirDb = []
+#shirList = [cols]
+shirList = []
 for i in range(listSz):
   line = lines[i].strip()
   if emailChk.search(line):
@@ -55,8 +57,10 @@ for i in range(listSz):
     else:
       keepCt += 1
       shirList.append([name,line])
-      shirDb.append({'fullNm':name,'email':line})
+#      shirDb.append({'fullNm':name,'email':line})
 
+random.shuffle(shirList) #shuffle so people in same family don't get email on same day -  NOTE:running this again gets differnt results
+shirList.insert(0,cols)  #and put in header
 tbl = tabulate.tabulate(shirList,headers = 'firstrow')
 print(tbl)
 print('emails = ',emailCt,'keeps = ',keepCt,'exList = ',len(exDb),'exCt = ',exCt)
