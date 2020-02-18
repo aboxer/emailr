@@ -41,6 +41,14 @@ if cmd == None:   #interactive mode
         rec = ed.getRec(idx)
         tbl = mailLib.db2Tbl([rec])
         print(tbl)
+    elif t[0] == 'gn': #get record by name
+      idxs = ed.getNm(t[1])
+      recDb = []
+      for idx in idxs:
+        recDb.append(ed.getRec(idx))
+      rec = recDb[0]  #pick the top score
+      tbl = mailLib.db2Tbl(recDb)
+      print(tbl)
     elif t[0] == 'cam': #change amount given
       amt = float(t[1])
       if rec['gvCt'] == None: #first time

@@ -15,7 +15,7 @@ import datetime
 import msgMkr
 import re
 from tabulate import tabulate
-#from fuzzywuzzy import fuzz
+from fuzzywuzzy import fuzz
 
 ###################### stuff related to gmail model class ###############################
 # If modifying these scopes, delete the file token.pickle.
@@ -193,7 +193,21 @@ def db2Tbl(db):
   #print(niceTbl)
   return niceTbl 
 
- 
+
+#for record sorting method getNm
+def score(elem):
+  return elem[0]
+
+
+def getMin(best):
+  minIdx = 0
+  minScore = best[minIdx][0]
+  for i in range(1,len(best)):
+    j = best[i][0]
+    if j < minScore:
+      minScore = j
+      minIdx = i
+  return minIdx
 
 #email database class
 class emailDb:
@@ -233,12 +247,30 @@ class emailDb:
       rec[col] = None
     return rec
 
-  def getEmail(self,email):
+  def getEmail(self,email): #get a record by email
     for i in range(len(self.db)):
       if self.db[i]['email'] == email:
         return i
     else:
       return None
+  
+
+  def getNm(self,fullNm): #get a record by name. Return up closest matches
+    best = [(0,' '),(0,' '),(0,' '),(0,' '),(0,' ')]
+
+    inNm = fullNm.lower()
+    for i in range(len(self.db)):
+      dbNm = self.db[i]['fullNm'].lower()
+      Ratio = fuzz.ratio(inNm,dbNm)
+      minIdx = getMin(best)
+      if Ratio > best[minIdx][0]:
+        best[minIdx] = (Ratio,i)
+
+    best.sort(key=score,reverse=True)
+    print(best)
+    return [best[0][1],best[1][1],best[2][1],best[3][1],best[4][1]]
+    #else:
+    #  return None
   
   #eet database stats
   def prStats(self):
