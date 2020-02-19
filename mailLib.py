@@ -215,7 +215,7 @@ class emailDb:
     #open existing database or create a new one
     #The database csv must have all the columns filled even if some are filled with None
     self.dbNm = emailDb
-    self.bkNm = emailBk
+    self.bkNm = emailBk + str(time.time()) + '.csv'
     self.svNm = emailSv
     self.dbCols = ['fullNm','email','grp','rqCt','lastRq','gvCt','lastGv','gvMeth','totAmt','act']
     try:
@@ -240,6 +240,15 @@ class emailDb:
   #set record
   def setRec(self,idx,rec):
     self.db[idx] = rec
+
+  #add record
+  def addRec(self,rec):
+    self.db.append(rec)
+
+  #remove record
+  def rmvRec(self,idx):
+    self.db.pop(idx)
+
 
   def emptyRec(self):
     rec = {}
