@@ -37,17 +37,8 @@ act      #true = requests allowed, false = requests not allowed             True
 ## Interactive mode
 > gn name    -fetch 5 closest name matches and make top one editable
 > ge email   -fetch exact email match and make it editable. Fetch nothing if no match
-> cr name    -create row fullNm=name and act=True
-> ch col value -change selected column of editable row and 
-     email string
-     grp   string
-     rqCt  num  - lastRq = now
-     lastRq date
-     gvCt  num  -lastGv = now
-     lastGv date
-     gvMeth string
-     totAmt num -gvCt += 1, lastGv = now
-     act  true/false
+> cr name 
+> ch col value -change selected column of editable row
 > at - add to totAmt, 
 > th -send thank you to editable row and put it back in database
 > pt -put editable row back in database
