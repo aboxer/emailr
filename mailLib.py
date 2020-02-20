@@ -401,7 +401,7 @@ class emailDb:
     for i in sendList:
       rec = self.db[i]
       email = rec['email']
-      body = msgMkr.mkMsg(True,rec)
+      body = msgMkr.mkMsg(rec['grp'] + '_rq1',rec)
       msg = create_message('aaron.boxer@gmail.com',email,' My PMC Ride for Alan Finder',body)
       msgList.append((i,msg))
     return sendList,msgList
@@ -410,7 +410,7 @@ class emailDb:
   def getThx(self,idx):
     rec = self.db[idx]
     email = rec['email']
-    body = msgMkr.mkMsg(False,rec)
+    body = msgMkr.mkMsg('gen_thx',rec)
     #print(body)
     msg = create_message('aaron.boxer@gmail.com',email,' Thanks for Your Donation to My PMC Ride for Alan Finder',body)
     return msg

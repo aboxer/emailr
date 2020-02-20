@@ -104,8 +104,6 @@ if cmd == None:   #interactive mode
         rec['totAmt'] += amt
       tbl = mailLib.db2Tbl([rec])
       print(tbl)
-
-
     elif t[0] == 'thx': #send thank you
       msg = ed.getThx(idx) #create a thank you message
       gm.send_message(False,[[idx,msg]])  #True = request, False = thanks

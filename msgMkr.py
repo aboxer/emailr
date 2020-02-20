@@ -45,6 +45,17 @@ I hope you found the thoughts on my PMC webpage meaningful and I hope you enjoye
 thanks, see you at Torah Study,
 Aaron
 """,
+'gen_thx':
+"""
+Hi <firstNm>,
+
+I appreciate your support.The last time I did something like this I was about 8 years old carrying one of those UNICEF cans on Halloween. I thought the coins were for me until my mom set me straight.
+
+I hope you found the thoughts on my PMC webpage meaningful and I hope you enjoyed the pictures.
+
+thanks again,
+Aaron
+""",
 'try_rq1':
 """
 Hi <firstNm>,
@@ -55,11 +66,11 @@ Aaron
 """
 }
 
-def mkMsg(rq,rec):
-  if rq == True:
-    msgId = rec['grp'] + '_rq1'
-  else:
-    msgId = rec['grp'] + '_thx'
+def mkMsg(msgId,rec):
+  #if rq == True:
+  #  msgId = rec['grp'] + '_rq1'
+  #else:
+  #  msgId = rec['grp'] + '_thx'
   msg = msgs[msgId]
 
   #find all the replaceble fields in the message
