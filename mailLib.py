@@ -402,7 +402,7 @@ class emailDb:
       rec = self.db[i]
       email = rec['email']
       body = msgMkr.mkMsg(rec['grp'] + '_rq1',rec)
-      msg = create_message('aaron.boxer@gmail.com',email,' My PMC Ride for Alan Finder',body)
+      msg = create_message('aaron.boxer@gmail.com',email,' My Pan-Mass Challenge Ride for Alan Finder',body)
       msgList.append((i,msg))
     return sendList,msgList
 

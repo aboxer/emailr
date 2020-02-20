@@ -27,12 +27,28 @@ I'm beginning to raise funds for my Pan Mass Challenge ride in memory of Alan Fi
 
 I have a webpage on the PMC website with some of my thoughts about Alan and some pictures of him , including one of Alan singing with Sophia. You can click on this link, profile.pmc.org/AB0492 if you'd like to donate by credit card.
 
-If you want to donate by check or Donor Advised Fund, here is the link on how to do it. https://www.pmc.org/ways-to-give
+If you want to donate by check or Donor Advised Fund, here is the link on how to do it. https://www.pmc.org/ways-to-give. Please include my egift ID (AB0492) so I can get credit toward my fundraising commitment.
 
 thanks, I'm looking forward to playing some music on Purim,
 Aaron
 
-PS: My address on this email is different from the one in the Shir Tikvah directory because I am using a different account to manage my PMC communications. I saw recently that there has been some type of email scam sent to Shir Tikvah members in Rabbi Cari's name. If you are concerned about this email, let me know using my address in the Shir Tikvah directory under Lawrence Boxer (the usual one you have for me).
+PS: My address on this email is different from the one in the Shir Tikvah directory because I am using a different account to manage my PMC communications. I saw recently that there has been some type of email scam sent to Shir Tikvah members in Rabbi Cari's name. If you are concerned about this email, let me know using my address in the Shir Tikvah directory under Lawrence Boxer (Aaron is my middle name).
+""",
+'stf_rq1':
+"""
+Hi <firstNm>,
+
+I'm beginning to raise funds for my Pan Mass Challenge ride in memory of Alan Finder. He made a musical contribution to Shir Tikvah through our chorus, Shir Chadash and Kiddush blessings on Friday nights. I know he is missed there.
+
+I have a webpage on the PMC website with some of my thoughts about Alan and some pictures. You can click on this link, profile.pmc.org/AB0492 if you'd like to donate by credit card.
+
+If you want to donate by check or Donor Advised Fund, here is the link on how to do it. https://www.pmc.org/ways-to-give.  Please include my egift ID (AB0492) so I can get credit toward my fundraising commitment.
+
+
+thanks for your support,
+Aaron Boxer
+
+PS: I saw recently that there has been some type of email scam sent to Shir Tikvah members in Rabbi Cari's name. If you are concerned about this email, contact me using my address in the Shir Tikvah directory under Lawrence Boxer (Aaron is my middle name).
 """,
 'tsg_thx':
 """
