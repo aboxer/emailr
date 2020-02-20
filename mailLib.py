@@ -287,7 +287,10 @@ class emailDb:
     lastRq = 0
     totAmt = 0.0
     giversCt = 0
+    asked = 0
     for rec in self.db:
+      if rec['rqCt'] != None:
+        asked += 1
       if rec['lastGv'] != None and rec['lastGv'] > lastGv:
         lastGv = rec['lastGv']
       if rec['lastRq'] != None and rec['lastRq'] > lastRq:
@@ -297,12 +300,22 @@ class emailDb:
         totAmt += rec['totAmt']
       #print(rec)
 
-    print('curTime = ',datetime.datetime.fromtimestamp(int(time.time())))
-    print('lastGv = ',datetime.datetime.fromtimestamp(lastGv))
-    print('lastRq = ',datetime.datetime.fromtimestamp(lastRq))
-    print('totAmt = ',totAmt)
-    print('giversCt = ',giversCt)
-    print('emailSz = ',len(self.db))
+    #print('curTime = ',datetime.datetime.fromtimestamp(int(time.time())))
+    #print('lastGv = ',datetime.datetime.fromtimestamp(lastGv))
+    #print('lastRq = ',datetime.datetime.fromtimestamp(lastRq))
+    #print('totAmt = ',totAmt)
+    #print('giversCt = ',giversCt)
+    #print('emailSz = ',len(self.db))
+    emailSz = len(self.db) - 1 #first line is the check givers
+    asked -= 1
+    rqFrac = float(asked/emailSz)
+    gvFrac = float(giversCt/asked)
+    avgGv = float(totAmt/giversCt)
+
+    tbl = [['listSz','rqSz','rqFrac','gvSz','gvFrac','avgGv','totGv']]
+    tbl.append([emailSz,asked,rqFrac,giversCt,gvFrac,avgGv,totAmt])
+    niceTbl =  tabulate(tbl,headers='firstrow',floatfmt="3.2f")
+    print(niceTbl)
 
 
   #initialize database with existing records
@@ -373,12 +386,16 @@ class emailDb:
 
 
   #get request list
-  def getRqs(self):
+  def getRqs(self,grp,num):
     sendList = []
+    sndCt = 0
     for i in range(len(self.db)):
       rec = self.db[i]
-      if rec['act'] == True and rec['lastRq'] == None:
+      if rec['act'] == True and rec['lastRq'] == None and rec['grp'] == grp:
         sendList.append(i)
+        sndCt += 1
+      if sndCt == num: #we have the required amount
+        break
 
     msgList = []
     for i in sendList:

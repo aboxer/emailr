@@ -6,6 +6,7 @@ import time
 
 #first parse the input arguments
 upd_flag = False
+dbg_flag = False
 cmd = None
 for i in range(1,len(sys.argv)):
   arg = sys.argv[i]
@@ -14,20 +15,26 @@ for i in range(1,len(sys.argv)):
     print('fileNm = ',arg)
   elif re.match('-',arg):
     opt = arg[1:] #chop of the dash
+    if opt == 'dbg':
+      dbg_flag = True
+      print('upd = ','True')
     if opt == 'upd':
       upd_flag = True
       print('upd = ','True')
-    elif re.match('\d+',opt):
-      sndCt = opt
-      print('sndCt = ',opt)
-    else:
+    elif re.match('tsg|stf|ind|sjo|try',opt):
       grp = opt
+  elif re.match('\+\d+',arg):
+    sndCt = int(arg[1:]) #chop of the dash
+    print('sndCt = ',sndCt)
   else:
     cmd = arg
     print('cmd = ',arg)
 
 
-ed = mailLib.emailDb('data/emailDb.csv','back/emailBk','/Users/lawrenceboxer/Dropbox/emailDb.csv') #create or open the db
+if dbg_flag == True:
+  ed = mailLib.emailDb('data/emailDbg.csv','back/emailBbg','/Users/lawrenceboxer/Dropbox/emailDbg.csv') #create or open the db
+else:
+  ed = mailLib.emailDb('data/emailDb.csv','back/emailBk','/Users/lawrenceboxer/Dropbox/emailDb.csv') #create or open the db
 gm = mailLib.gmailr(ed)
 if cmd == None:   #interactive mode
   intFlag = True
@@ -73,7 +80,7 @@ if cmd == None:   #interactive mode
           rec['act'] = True
         else:
           rec['act'] = False
-      else:
+      elif re.match('fullNm|email|grp|gvMeth',t[1]):
         rec[t[1]] = t[2]
       tbl = mailLib.db2Tbl([rec])
       print(tbl)
@@ -81,7 +88,7 @@ if cmd == None:   #interactive mode
       upd_flag = True
       if idx == None:
         ed.addRec(rec)
-      else:
+      elif idx < len(ed.db):
         ed.setRec(idx,rec)
     elif t[0] == 'rr': #remove record from database
       upd_flag = True
@@ -117,7 +124,7 @@ elif cmd == 'ch':
 elif cmd == 'rr':
   ed.rmRec(fileNm)
 elif cmd == 'sr':
-  sendList,msgList = ed.getRqs() #create a list of record indices and corresponding messages to send
+  sendList,msgList = ed.getRqs(grp,sndCt) #create a list of record indices and corresponding messages to send
   for snd in sendList:  #for debugging just print who gets the messages
     print(ed.getRec(snd))
   if upd_flag == True: #if update is set, send the messages. the gmailer will update the records if email is sent
@@ -127,7 +134,7 @@ else:
 bad command
 """)
 
-ed.prStats()
 ed.prTbl()
+ed.prStats()
 if upd_flag == True:
   ed.exitDb()

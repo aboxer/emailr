@@ -44,6 +44,14 @@ I hope you found the thoughts on my PMC webpage meaningful and I hope you enjoye
 
 thanks, see you at Torah Study,
 Aaron
+""",
+'try_rq1':
+"""
+Hi <firstNm>,
+ 
+test message
+
+Aaron
 """
 }
 
