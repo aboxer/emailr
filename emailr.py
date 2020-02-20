@@ -68,11 +68,17 @@ if cmd == None:   #interactive mode
       if t[1] == 'rqCt':
         rec['rqCt'] = int(t[2])
       elif t[1] == 'lastRq':
-        rec['lastRq'] = mailLib.str2ts(t[2])
+        try:
+          rec['lastRq'] = mailLib.str2ts(t[2])
+        except:
+          rec['lastRq'] = int(time.time())
       elif t[1] == 'gvCt':
         rec['gvCt'] = int(t[2])
       elif t[1] == 'lastGv':
-        rec['lastGv'] = mailLib.str2ts(t[2])
+        try:
+          rec['lastGv'] = mailLib.str2ts(t[2])
+        except:
+          rec['lastGv'] = int(time.time())
       elif t[1] == 'totAmt':
         rec['totAmt'] = float(t[2])
       elif t[1] == 'act':
