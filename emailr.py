@@ -27,7 +27,7 @@ for i in range(1,len(sys.argv)):
     print('cmd = ',arg)
 
 
-ed = mailLib.emailDb('data/emailDb.csv','data/emailBk','/Users/lawrenceboxer/Dropbox/emailDb.csv') #create or open the db
+ed = mailLib.emailDb('data/emailDb.csv','back/emailBk','/Users/lawrenceboxer/Dropbox/emailDb.csv') #create or open the db
 gm = mailLib.gmailr(ed)
 if cmd == None:   #interactive mode
   intFlag = True
