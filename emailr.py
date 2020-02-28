@@ -116,8 +116,8 @@ if cmd == None:   #interactive mode
       upd_flag = True
       
 elif cmd == 'mr':
-  ed.prStats()
-  ed.prTbl()
+  #ed.prStats()
+  #ed.prTbl()
   upd_flag = False #don't overwrite database just to get a report
 elif cmd == 'ag':
   ed.addGrp(grp,fileNm)

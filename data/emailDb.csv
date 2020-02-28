@@ -1,17 +1,17 @@
 fullNm,email,grp,rqCt,lastRq,gvCt,lastGv,gvMeth,totAmt,act
-unknown,nobody@nomail.com,non,1,02/11/2020 11:56:16,1,02/11/2020 00:00:00,unknown,224.0,True
+unknown,nobody@nomail.com,non,1,02/11/2020 11:56:16,1,02/11/2020 00:00:00,unknown,0.0,True
 Jerilyn Heinold,Jheinold@comcast.net,stf,1,01/23/2020 00:00:00,1,01/23/2020 00:00:00,online,36.0,True
 Reva Shapiro,Rsnj2@aol.com,tsg,1,01/23/2020 00:00:00,1,01/23/2020 00:00:00,online,18.0,True
 Lynne Brodsky,lynnesgarden@gmail.com,tsg,1,01/23/2020 00:00:00,1,01/23/2020 00:00:00,online,120.0,True
 Benjamin Finder,bdfinder@gmail.com,stf,1,01/23/2020 00:00:00,1,01/24/2020 00:00:00,online,50.0,True
 Amy Travis,amy.travis@gmail.com,stf,1,01/23/2020 00:00:00,1,01/25/2020 00:00:00,online,60.0,True
 Miriam Lansky,mdScheiman@yahoo.com,stf,1,01/23/2020 00:00:00,1,01/25/2020 00:00:00,online,50.0,True
-Areve Alexander,areve@comcast.net,tsg,1,02/06/2020 17:42:01,1,02/11/2020 00:00:00,online,54.0,True
-Rob Ain,rain2004@gmail.com,tsg,1,02/06/2020 17:42:03,1,02/11/2020 00:00:00,check,100.0,True
+Areve Alexander,areve@comcast.net,tsg,1,02/06/2020 17:42:01,1,02/11/2020 00:00:00,online,378.0,True
+Rob Ain,rain2004@gmail.com,tsg,1,02/06/2020 17:42:03,1,02/11/2020 00:00:00,check,0.0,True
 Bill Prenovitz,lexwood@hotmail.com,tsg,1,02/06/2020 21:39:53,,,,,True
 Dave Owens,davidwowens2860@gmail.com,tsg,1,02/06/2020 00:00:00,1,02/06/2020 00:00:00,online,120.0,True
 Nan Owens,nanowens@aol.com,tsg,1,02/06/2020 00:00:00,1,02/06/2020 00:00:00,online,40.0,True
-David Goodman,dgoodman@gbj-bestcpa.com,tsg,1,02/06/2020 21:40:05,1,02/11/2020 00:00:00,check,0.0,True
+David Goodman,dgoodman@gbj-bestcpa.com,tsg,1,02/06/2020 21:40:05,1,02/11/2020 00:00:00,check,250.0,True
 Amy Rubin,amy0731@msn.com,tsg,1,02/06/2020 21:40:09,,,,,True
 Tra Evrigenis,tevrigenis@gmail.com,tsg,1,02/06/2020 00:00:00,1,02/07/2020 00:00:00,online,30.0,True
 Beth Cohen,bfcohen@luthcomputer.com,tsg,1,02/06/2020 00:00:00,1,02/06/2020 00:00:00,online,36.0,True
@@ -20,7 +20,7 @@ Judy Lebow,jlebow@verizon.net,tsg,1,02/06/2020 00:00:00,1,02/07/2020 00:00:00,on
 Caroline Lieber,caroline@wakefieldmusic.org,sjo,1,02/11/2020 11:56:12,1,02/11/2020 00:00:00,online,30.0,True
 Joel Zimmerman,joelazimmerman@yahoo.com,sjo,1,02/11/2020 11:56:14,1,02/24/2020 13:49:21,online,50.0,True
 Bill Jaeger,jaegermintz@verizon.net,sjo,1,02/11/2020 11:56:14,,,,,True
-Julie Goldberg,jrgaud@aol.com,sjo,1,02/11/2020 11:56:14,1,02/19/2020 00:00:00,check,0.0,True
+Julie Goldberg,jrgaud@aol.com,sjo,1,02/11/2020 11:56:14,1,02/19/2020 00:00:00,check,50.0,True
 Sandy Nanu,nanu_sandy@verizon.net,sjo,1,02/11/2020 11:56:14,,,,,True
 Diane Gardner,dsgardner@verizon.net,sjo,1,02/11/2020 11:56:15,,,,,True
 Andrew Conway,ahconway@gmail.com,sjo,1,02/11/2020 11:56:16,1,02/11/2020 00:00:00,online,60.0,True
@@ -88,45 +88,45 @@ Heather Hill,heather_hill@harvard.edu,stf,1,02/24/2020 13:55:26,,,,,True
 Jon Star,jon_star@harvard.edu,stf,1,02/24/2020 13:55:27,,,,,True
 Philip Myers,myers-hoffman@comcast.net,stf,1,02/24/2020 13:55:27,,,,,True
 Don Abrams,abramsdb@yahoo.com,stf,1,02/24/2020 13:35:09,1,02/24/2020 13:35:25,online,90.0,True
-Marion Magill,marion_magill@hotmail.com,stf,,,,,,,True
-Tom Hirschfeld,ayongtom@gmail.com,stf,,,,,,,True
-Matthew Ganz,matt.ganz@gmail.com,stf,,,,,,,True
-Lisa Kilborn,lkilborn@gmail.com,stf,,,,,,,True
-Shira Horowitz,shira8@outlook.com,stf,,,,,,,True
-Joshua Goldlust,jgoldlust@hotmail.com,stf,,,,,,,True
-Cliff Manko,cliff.manko@gmail.com,stf,,,,,,,True
-Paula Goldstein,ptgold@hotmail.com,stf,,,,,,,True
-David Kling,dekling888@gmail.com,stf,,,,,,,True
-Suzanne Schwartz,timsuz@rcn.com,stf,,,,,,,True
-Sharon Solomon,rssolomon@comcast.net,stf,,,,,,,True
-Julianne Mckenney,jmom0227@msn.com,stf,,,,,,,True
-Cindy Prenovitz,cindy.prenovitz@gmail.com,stf,,,,,,,True
-Tod Wiesman,wiesmant@ummhc.org,stf,,,,,,,True
-Larry Kravitz,larry.kravitz@gmail.com,stf,,,,,,,True
-Anthony Barry,abbarry@gmail.com,stf,,,,,,,True
-Spencer Lynn,priceandlynn@gmail.com,stf,,,,,,,True
-Carolyn Hirschfeld,krantz601@gmail.com,stf,,,,,,,True
-Sherry Reisner,sreisner@me.com,stf,,,,,,,True
-Dr. Malcolm Beaudett,m.beaudett.md@comcast.net,stf,,,,,,,True
-Marissa Seligman,phootmansbride@aol.com,stf,,,,,,,True
-Robin Smith,steveandrobin3@verizon.net,stf,,,,,,,True
-Ruth Morgenstein,r_morgenstein@yahoo.com,stf,,,,,,,True
-Karyn Ginsburg,ginsburgkaryn@gmail.com,stf,,,,,,,True
-Niels Burger,nielsburger15@gmail.com,stf,,,,,,,True
-Sasha (Alexander) Chanoff,sasha@chanoff.com,stf,,,,,,,True
-Lisa Deutsch,lineal1@aol.com,stf,,,,,,,True
-Gary Klein,gklein24@verizon.net,stf,,,,,,,True
-Mark Kagan,markkagan@comcast.net,stf,,,,,,,True
-Timm Triplett,tat@cisunix.unh.edu,stf,,,,,,,True
-Daniel Sokoloff,dan.sokoloff@gmail.com,stf,,,,,,,True
-Alfredo Csibi,acsibi@gmail.com,stf,,,,,,,True
-Alex Hoffinger,ahoffinger@gmail.com,stf,,,,,,,True
-Rachel Osborn,r-tst@rachellillian.com,stf,,,,,,,True
-Xiao-cheng Li-Sucholeiki,xiaocheng@att.net,stf,,,,,,,True
-Rachel Rockenmacher,rrockenmacher@gmail.com,stf,,,,,,,True
-Shari Agatstein,shari@agatstein.com,stf,,,,,,,True
-Andrew Kolodziej,akoloj@gmail.com,stf,,,,,,,True
-Cathy Amsterdam,cat_amsterdam@comcast.net,stf,,,,,,,True
+Marion Magill,marion_magill@hotmail.com,stf,1,02/25/2020 10:18:40,,,,,True
+Tom Hirschfeld,ayongtom@gmail.com,stf,1,02/25/2020 10:18:41,,,,,True
+Matthew Ganz,matt.ganz@gmail.com,stf,1,02/25/2020 10:18:41,,,,,True
+Lisa Kilborn,lkilborn@gmail.com,stf,1,02/25/2020 10:18:41,,,,,True
+Shira Horowitz,shira8@outlook.com,stf,1,02/25/2020 10:18:42,,,,,True
+Joshua Goldlust,jgoldlust@hotmail.com,stf,1,02/25/2020 10:18:43,,,,,True
+Cliff Manko,cliff.manko@gmail.com,stf,1,02/25/2020 10:18:43,1,02/26/2020 22:00:45,online,250.0,True
+Paula Goldstein,ptgold@hotmail.com,stf,1,02/25/2020 10:18:43,,,,,True
+David Kling,dekling888@gmail.com,stf,1,02/25/2020 10:18:44,,,,,True
+Suzanne Schwartz,timsuz@rcn.com,stf,1,02/25/2020 10:18:44,,,,,True
+Sharon Solomon,rssolomon@comcast.net,stf,1,02/26/2020 11:06:09,,,,,True
+Julianne Mckenney,jmom0227@msn.com,stf,1,02/26/2020 11:06:09,,,,,True
+Cindy Prenovitz,cindy.prenovitz@gmail.com,stf,1,02/26/2020 11:06:09,,,,,True
+Tod Wiesman,wiesmant@ummhc.org,stf,1,02/26/2020 11:06:10,,,,,True
+Larry Kravitz,larry.kravitz@gmail.com,stf,1,02/26/2020 11:06:11,,,,,True
+Anthony Barry,abbarry@gmail.com,stf,1,02/26/2020 11:06:11,,,,,True
+Spencer Lynn,priceandlynn@gmail.com,stf,1,02/27/2020 07:30:39,,,,,True
+Carolyn Hirschfeld,krantz601@gmail.com,stf,1,02/26/2020 11:06:12,,,,,True
+Sherry Reisner,sreisner@me.com,stf,1,02/26/2020 11:06:12,,,,,True
+Dr. Malcolm Beaudett,m.beaudett.md@comcast.net,stf,1,02/26/2020 11:06:13,,,,,True
+Marissa Seligman,phootmansbride@aol.com,stf,1,02/27/2020 07:30:39,,,,,True
+Robin Smith,steveandrobin3@verizon.net,stf,1,02/27/2020 07:30:39,,,,,True
+Ruth Morgenstein,r_morgenstein@yahoo.com,stf,1,02/27/2020 07:30:40,,,,,True
+Karyn Ginsburg,ginsburgkaryn@gmail.com,stf,1,02/27/2020 07:30:40,,,,,True
+Niels Burger,nielsburger15@gmail.com,stf,1,02/27/2020 07:30:41,,,,,True
+Sasha (Alexander) Chanoff,sasha@chanoff.com,stf,1,02/27/2020 07:30:41,,,,,True
+Lisa Deutsch,lineal1@aol.com,stf,1,02/27/2020 07:30:41,,,,,True
+Gary Klein,gklein24@verizon.net,stf,1,02/27/2020 07:30:42,,,,,True
+Mark Kagan,markkagan@comcast.net,stf,1,02/27/2020 07:30:42,,,,,True
+Timm Triplett,tat@cisunix.unh.edu,stf,1,02/28/2020 08:52:27,,,,,True
+Daniel Sokoloff,dan.sokoloff@gmail.com,stf,1,02/28/2020 08:52:28,,,,,True
+Alfredo Csibi,acsibi@gmail.com,stf,1,02/28/2020 08:52:28,,,,,True
+Alex Hoffinger,ahoffinger@gmail.com,stf,1,02/28/2020 08:52:29,,,,,True
+Rachel Osborn,r-tst@rachellillian.com,stf,1,02/28/2020 08:52:29,,,,,True
+Xiao-cheng Li-Sucholeiki,xiaocheng@att.net,stf,1,02/28/2020 08:52:30,,,,,True
+Rachel Rockenmacher,rrockenmacher@gmail.com,stf,1,02/28/2020 08:52:30,,,,,True
+Shari Agatstein,shari@agatstein.com,stf,1,02/28/2020 08:52:31,,,,,True
+Andrew Kolodziej,akoloj@gmail.com,stf,1,02/28/2020 08:52:31,,,,,True
+Cathy Amsterdam,cat_amsterdam@comcast.net,stf,1,02/28/2020 08:52:31,,,,,True
 Val Kaper,kaperv@yahoo.com,stf,,,,,,,True
 Michael Switkes,tst@switkes.org,stf,,,,,,,True
 Steve Blumenthal,steven.blumenthal@gmail.com,stf,,,,,,,True
@@ -174,7 +174,7 @@ Marianna Silverman,marianna.silverman@gmail.com,stf,,,,,,,True
 Deborah Mendez,debby@josesmex.com,stf,,,,,,,True
 Anthony Arone,arone13@yahoo.com,stf,,,,,,,True
 Elissa Weitzman,elissa.weitzman@childrens.harvard.edu,stf,,,,,,,True
-Rob Shaffer,rob.edda@verizon.net,stf,,,,,,,True
+Rob Shaffer,rob.edda@verizon.net,stf,1,02/26/2020 21:58:38,1,02/26/2020 21:58:54,online,50.0,True
 Paula Solomon,solorosen@aol.com,stf,,,,,,,True
 Roberta Tovey,robertaevetovey@gmail.com,stf,,,,,,,True
 Dan Seligman,phootman@aol.com,stf,,,,,,,True
