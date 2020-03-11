@@ -66,28 +66,42 @@ if cmd == None:   #interactive mode
       print(tbl)
     elif t[0] == 'ch': #change column
       if t[1] == 'rqCt':
-        rec['rqCt'] = int(t[2])
+        try:
+          rec['rqCt'] = int(t[2])
+        except:
+          rec['rqCt'] = None
+          rec['lastRq'] = None
       elif t[1] == 'lastRq':
         try:
           rec['lastRq'] = mailLib.str2ts(t[2])
         except:
           rec['lastRq'] = int(time.time())
       elif t[1] == 'gvCt':
-        rec['gvCt'] = int(t[2])
+        try:
+          rec['gvCt'] = int(t[2])
+        except:
+          rec['gvCt'] = None
+          rec['lastGv'] = None
       elif t[1] == 'lastGv':
         try:
           rec['lastGv'] = mailLib.str2ts(t[2])
         except:
           rec['lastGv'] = int(time.time())
       elif t[1] == 'totAmt':
-        rec['totAmt'] = float(t[2])
+        try:
+          rec['totAmt'] = float(t[2])
+        except:
+          rec['totAmt'] = None
       elif t[1] == 'act':
         if t[2].lower() == 'true':
           rec['act'] = True
         else:
           rec['act'] = False
       elif re.match('fullNm|email|grp|gvMeth',t[1]):
-        rec[t[1]] = t[2]
+        try:
+          rec[t[1]] = t[2]
+        except:
+          rec[t[1]] = None
       tbl = mailLib.db2Tbl([rec])
       print(tbl)
     elif t[0] == 'pt': #add record to database
