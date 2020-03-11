@@ -75,10 +75,12 @@ Aaron
 'try_rq1':
 """
 Hi <firstNm>,
- 
-test message
 
-Aaron
+I'm raising funds for my Pan Mass Challenge ride in memory of my friend, Alan Finder. He made a musical contribution to my synagogue, through our chorus, torah study classes and at Friday night services. I know he is greatly missed there. Instructions are at the end of this email if you'd like to donate to my ride.
+<fileMsg>
+I have a webpage on the PMC website with some of my thoughts about Alan and some pictures. You can click on this link, profile.pmc.org/AB0492 if you'd like to donate by credit card.
+
+If you want to donate by check or Donor Advised Fund, here is the link on how to do it. https://www.pmc.org/ways-to-give.  Please include my egift ID (AB0492) so I can get credit toward my fundraising commitment.
 """
 }
 
@@ -96,16 +98,27 @@ def mkMsg(msgId,rec):
     rpllocs.append(rpl.span()) #span[0] = < and span[1] = char after >
 
   #replace them with data from rec
+  newMsg = ''
+  newPtr = 0
   for rplloc in rpllocs:
     beg = rplloc[0]
     end = rplloc[1]
+    newMsg = newMsg + msg[newPtr:beg]
     rpl = msg[beg:end]
     fieldNm = msg[beg+1:end-1] #chop off < and >
     if fieldNm == 'firstNm':
-      #firstNm = rec['fullNm'].split()[0]   #just first name
       name = HumanName(rec['fullNm'])
-      #msg = msg.replace(rpl,firstNm)
-      msg = msg.replace(rpl,name.first)
+      #msg = msg.replace(rpl,name.first)
+      newMsg = newMsg + name.first
+      newPtr = end
+    if fieldNm == 'fileMsg':
+      mfile = open('fileMsg.txt','r')
+      cus = mfile.read()
+      mfile.close()
+      #msg = msg.replace(rpl,cus)
+      newMsg = newMsg + cus
 
-  return msg
+  #return msg
+  newMsg = newMsg + msg[end:]
+  return newMsg
  

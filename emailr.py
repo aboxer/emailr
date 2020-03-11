@@ -3,6 +3,7 @@ import sys
 import re
 import mailLib
 import time
+import msgMkr
 
 #first parse the input arguments
 upd_flag = False
@@ -64,6 +65,10 @@ if cmd == None:   #interactive mode
       rec['act'] = True
       tbl = mailLib.db2Tbl([rec])
       print(tbl)
+    elif t[0] == 'sr': #create new message
+      body = msgMkr.mkMsg(rec['grp'] + '_rq1',rec)
+      msg = mailLib.create_message('aaron.boxer@gmail.com',rec['email'],' My Pan-Mass Challenge Ride for Alan Finder',body)
+      print(body)
     elif t[0] == 'ch': #change column
       if t[1] == 'rqCt':
         try:
@@ -93,9 +98,12 @@ if cmd == None:   #interactive mode
         except:
           rec['totAmt'] = None
       elif t[1] == 'act':
-        if t[2].lower() == 'true':
-          rec['act'] = True
-        else:
+        try:
+          if t[2].lower() == 'true':
+            rec['act'] = True
+          else:
+            rec['act'] = False
+        except:
           rec['act'] = False
       elif re.match('fullNm|email|grp|gvMeth',t[1]):
         try:
@@ -110,6 +118,13 @@ if cmd == None:   #interactive mode
         ed.addRec(rec)
       elif idx < len(ed.db):
         ed.setRec(idx,rec)
+        try:
+          msg
+          gm.send_message(True,[[idx,msg]])  #True = request, False = thanks
+          del(msg)
+        except:
+          pass
+        
     elif t[0] == 'rr': #remove record from database
       upd_flag = True
       if idx != None:
