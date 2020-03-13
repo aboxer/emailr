@@ -72,7 +72,7 @@ I hope you found the thoughts on my PMC webpage meaningful and I hope you enjoye
 thanks again,
 Aaron
 """,
-'try_rq1':
+'cus_rq1':
 """
 Hi <firstNm>,
 

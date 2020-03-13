@@ -66,7 +66,8 @@ if cmd == None:   #interactive mode
       tbl = mailLib.db2Tbl([rec])
       print(tbl)
     elif t[0] == 'sr': #create new message
-      body = msgMkr.mkMsg(rec['grp'] + '_rq1',rec)
+      #body = msgMkr.mkMsg(rec['grp'] + '_rq1',rec)
+      body = msgMkr.mkMsg('cus' + '_rq1',rec)
       msg = mailLib.create_message('aaron.boxer@gmail.com',rec['email'],' My Pan-Mass Challenge Ride for Alan Finder',body)
       print(body)
     elif t[0] == 'ch': #change column
