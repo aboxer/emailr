@@ -3,6 +3,7 @@ import sys
 import re
 import mailLib
 import time
+import msgMkr
 
 #first parse the input arguments
 upd_flag = False
@@ -21,7 +22,7 @@ for i in range(1,len(sys.argv)):
     if opt == 'upd':
       upd_flag = True
       print('upd = ','True')
-    elif re.match('tsg|stf|ind|sjo|try',opt):
+    elif re.match('tsg|stf|ind|sjo|try|fri',opt):
       grp = opt
   elif re.match('\+\d+',arg):
     sndCt = int(arg[1:]) #chop of the dash
@@ -64,30 +65,52 @@ if cmd == None:   #interactive mode
       rec['act'] = True
       tbl = mailLib.db2Tbl([rec])
       print(tbl)
+    elif t[0] == 'sr': #create new message
+      #body = msgMkr.mkMsg(rec['grp'] + '_rq1',rec)
+      body = msgMkr.mkMsg('cus' + '_rq1',rec)
+      msg = mailLib.create_message('aaron.boxer@gmail.com',rec['email'],' My Pan-Mass Challenge Ride for Alan Finder',body)
+      print(body)
     elif t[0] == 'ch': #change column
       if t[1] == 'rqCt':
-        rec['rqCt'] = int(t[2])
+        try:
+          rec['rqCt'] = int(t[2])
+        except:
+          rec['rqCt'] = None
+          rec['lastRq'] = None
       elif t[1] == 'lastRq':
         try:
           rec['lastRq'] = mailLib.str2ts(t[2])
         except:
           rec['lastRq'] = int(time.time())
       elif t[1] == 'gvCt':
-        rec['gvCt'] = int(t[2])
+        try:
+          rec['gvCt'] = int(t[2])
+        except:
+          rec['gvCt'] = None
+          rec['lastGv'] = None
       elif t[1] == 'lastGv':
         try:
           rec['lastGv'] = mailLib.str2ts(t[2])
         except:
           rec['lastGv'] = int(time.time())
       elif t[1] == 'totAmt':
-        rec['totAmt'] = float(t[2])
+        try:
+          rec['totAmt'] = float(t[2])
+        except:
+          rec['totAmt'] = None
       elif t[1] == 'act':
-        if t[2].lower() == 'true':
-          rec['act'] = True
-        else:
+        try:
+          if t[2].lower() == 'true':
+            rec['act'] = True
+          else:
+            rec['act'] = False
+        except:
           rec['act'] = False
       elif re.match('fullNm|email|grp|gvMeth',t[1]):
-        rec[t[1]] = t[2]
+        try:
+          rec[t[1]] = t[2]
+        except:
+          rec[t[1]] = None
       tbl = mailLib.db2Tbl([rec])
       print(tbl)
     elif t[0] == 'pt': #add record to database
@@ -96,6 +119,13 @@ if cmd == None:   #interactive mode
         ed.addRec(rec)
       elif idx < len(ed.db):
         ed.setRec(idx,rec)
+        try:
+          msg
+          gm.send_message(True,[[idx,msg]])  #True = request, False = thanks
+          del(msg)
+        except:
+          pass
+        
     elif t[0] == 'rr': #remove record from database
       upd_flag = True
       if idx != None:
