@@ -74,6 +74,7 @@ if cmd == None:   #interactive mode
       if t[1] == 'rqCt':
         try:
           rec['rqCt'] = int(t[2])
+          rec['lastRq'] = int(time.time())
         except:
           rec['rqCt'] = None
           rec['lastRq'] = None
@@ -85,6 +86,7 @@ if cmd == None:   #interactive mode
       elif t[1] == 'gvCt':
         try:
           rec['gvCt'] = int(t[2])
+          rec['lastGv'] = int(time.time())
         except:
           rec['gvCt'] = None
           rec['lastGv'] = None
