@@ -1,5 +1,5 @@
 fullNm,email,grp,rqCt,lastRq,gvCt,lastGv,gvMeth,totAmt,act
-unknown,nobody@nomail.com,non,1,02/11/2020 11:56:16,1,02/11/2020 00:00:00,unknown,0.0,True
+unknown,nobody@nomail.com,non,1,02/11/2020 11:56:16,1,02/11/2020 00:00:00,unknown,60.0,True
 Jerilyn Heinold,Jheinold@comcast.net,stf,1,01/23/2020 00:00:00,1,01/23/2020 00:00:00,online,36.0,True
 Reva Shapiro,Rsnj2@aol.com,tsg,1,01/23/2020 00:00:00,1,01/23/2020 00:00:00,online,18.0,True
 Lynne Brodsky,lynnesgarden@gmail.com,tsg,1,01/23/2020 00:00:00,1,01/23/2020 00:00:00,online,120.0,True
@@ -293,48 +293,48 @@ Emily Paisner,emilypaisner@gmail.com,stf,1,03/15/2020 11:12:34,,,,,True
 Mona Zeftel,mzeftel@gmail.com,stf,1,03/15/2020 11:12:35,,,,,True
 Dr Jerry Blaine,jerry.blaine@comcast.net,stf,1,03/15/2020 11:12:35,,,,,True
 Nancy Shafman,nshafman@fas.harvard.edu,stf,1,03/15/2020 11:12:35,,,,,True
-Rachel Klopfer,drrach@mit.edu,stf,,,,,,,True
-Edward Adelson,adelson@csail.mit.edu,stf,,,,,,,True
-Susan Kemp,susanskemp@gmail.com,stf,,,,,,,True
-Rebekah Coble,rebekahsc@yahoo.com,stf,,,,,,,True
-Dan Lowen,DSL4FUN@gmail.com,stf,,,,,,,True
-Nathaniel Brooks,natbrooks17@yahoo.com,stf,,,,,,,True
-Samuel Putnam,samputnam@gmail.com,stf,,,,,,,True
-Stuart Levine,stuart.s.levine@gmail.com,stf,,,,,,,True
-Barbara Burka,barbaraburka@gmail.com,stf,,,,,,,True
-Bonnie Newman,bjnewman@rcn.com,stf,,,,,,,True
-John Coley,jcoley@neu.edu,stf,,,,,,,True
-Sue Janowitz,sjanowitz@comcast.net,stf,,,,,,,True
-Jason Marder,jasonmarder@gmail.com,stf,,,,,,,True
-Nicholas Mohamed,nickmohamed@yahoo.com,stf,,,,,,,True
-Steve Smith,steveact61@gmail.com,stf,,,,,,,True
-Dan Press,dpress@bidmc.harvard.edu,stf,,,,,,,True
-Steve Kalik,sfkalik@comcast.net,stf,,,,,,,True
-Angela Schatz,angela.s@rcn.com,stf,,,,,,,True
-Deborah Schwartz,dmerle@gmail.com,stf,,,,,,,True
-Carrie Beaulieu,carriebeaulieu@yahoo.com,stf,,,,,,,True
-Topher Cohen,topher@topherc.net,stf,,,,,,,True
-Lisa Price,lisafprice@icloud.com,stf,,,,,,,True
-Christopher Leich,cleich@ropesgray.com,stf,,,,,,,True
-Madeleine Dassule,mdassule@aol.com,stf,,,,,,,True
-Andrea Davis,adavis52@gmail.com,stf,,,,,,,True
-Maya Avram,maya@cjpshinshinim.org,stf,,,,,,,True
-Jennifer Broder,jenniferbroder@gmail.com,stf,,,,,,,True
-Elyssa Back,elyssaback@hotmail.com,stf,,,,,,,True
-Elizabeth Spivak,beth@spivakfamily.com,stf,,,,,,,True
-Arnoldo Henriquez,celaje56@comcast.net,stf,,,,,,,True
-David Heinold,dheinold@comcast.net,stf,,,,,,,True
-Sam Guyer,sam.guyer@gmail.com,stf,,,,,,,True
-Julia Moskowitz,juliamoskowitz@gmail.com,stf,,,,,,,True
-Bill Stobbe,williamstobbe@gmail.com,stf,,,,,,,True
-Dan Ollendorf,dcamj@verizon.net,stf,,,,,,,True
-Stephanie Beaudett,stephanie.beaudett@gmail.com,stf,,,,,,,True
-Laura Gold,lbg24k@comcast.net,stf,,,,,,,True
-Erin Gubert,erindgubert@gmail.com,stf,,,,,,,True
-Heidi Star,chaidho@yahoo.com,stf,,,,,,,True
-Lynne Helfand,lynnehelfand@gmail.com,stf,,,,,,,True
-Julie Laukkanen,laukkanen@gmail.com,stf,,,,,,,True
-Rick Shaffer,rickshaffer01@mac.com,stf,,,,,,,True
+Rachel Klopfer,drrach@mit.edu,stf,1,03/16/2020 09:01:30,,,,,True
+Edward Adelson,adelson@csail.mit.edu,stf,1,03/16/2020 09:01:30,,,,,True
+Susan Kemp,susanskemp@gmail.com,stf,1,03/16/2020 09:01:30,,,,,True
+Rebekah Coble,rebekahsc@yahoo.com,stf,1,03/16/2020 09:01:31,,,,,True
+Dan Lowen,DSL4FUN@gmail.com,stf,1,03/16/2020 09:01:32,,,,,True
+Nathaniel Brooks,natbrooks17@yahoo.com,stf,1,03/16/2020 09:01:32,,,,,True
+Samuel Putnam,samputnam@gmail.com,stf,1,03/16/2020 09:01:33,,,,,True
+Stuart Levine,stuart.s.levine@gmail.com,stf,1,03/16/2020 09:01:33,,,,,True
+Barbara Burka,barbaraburka@gmail.com,stf,1,03/16/2020 09:01:34,,,,,True
+Bonnie Newman,bjnewman@rcn.com,stf,1,03/16/2020 09:01:34,,,,,True
+John Coley,jcoley@neu.edu,stf,1,04/10/2020 14:13:10,,,,,True
+Sue Janowitz,sjanowitz@comcast.net,stf,1,04/10/2020 14:13:10,,,,,True
+Jason Marder,jasonmarder@gmail.com,stf,1,04/10/2020 14:13:11,,,,,True
+Nicholas Mohamed,nickmohamed@yahoo.com,stf,1,04/10/2020 14:13:11,,,,,True
+Steve Smith,steveact61@gmail.com,stf,1,04/10/2020 14:13:13,,,,,True
+Dan Press,dpress@bidmc.harvard.edu,stf,1,04/10/2020 14:13:13,,,,,True
+Steve Kalik,sfkalik@comcast.net,stf,1,04/10/2020 14:13:14,,,,,True
+Angela Schatz,angela.s@rcn.com,stf,1,04/10/2020 14:13:14,,,,,True
+Deborah Schwartz,dmerle@gmail.com,stf,1,04/10/2020 14:13:15,,,,,True
+Carrie Beaulieu,carriebeaulieu@yahoo.com,stf,1,04/10/2020 14:13:16,,,,,True
+Topher Cohen,topher@topherc.net,stf,,,,,,,False
+Lisa Price,lisafprice@icloud.com,stf,1,04/10/2020 14:13:17,,,,,True
+Christopher Leich,cleich@ropesgray.com,stf,1,04/10/2020 14:13:17,,,,,True
+Madeleine Dassule,mdassule@aol.com,stf,1,04/10/2020 14:13:18,,,,,True
+Andrea Davis,adavis52@gmail.com,stf,1,04/10/2020 14:13:19,,,,,True
+Maya Avram,maya@cjpshinshinim.org,stf,1,04/10/2020 14:13:19,,,,,True
+Jennifer Broder,jenniferbroder@gmail.com,stf,1,04/11/2020 07:41:36,,,,,True
+Elyssa Back,elyssaback@hotmail.com,stf,1,04/11/2020 07:41:36,,,,,True
+Elizabeth Spivak,beth@spivakfamily.com,stf,1,04/11/2020 07:41:36,,,,,True
+Arnoldo Henriquez,celaje56@comcast.net,stf,1,04/11/2020 07:41:37,,,,,True
+David Heinold,dheinold@comcast.net,stf,,,,,,,False
+Sam Guyer,sam.guyer@gmail.com,stf,1,04/11/2020 07:41:37,,,,,True
+Julia Moskowitz,juliamoskowitz@gmail.com,stf,1,04/11/2020 07:41:38,,,,,True
+Bill Stobbe,williamstobbe@gmail.com,stf,1,04/11/2020 07:41:38,,,,,True
+Dan Ollendorf,dcamj@verizon.net,stf,1,04/11/2020 07:41:39,,,,,True
+Stephanie Beaudett,stephanie.beaudett@gmail.com,stf,1,04/11/2020 07:41:39,,,,,True
+Laura Gold,lbg24k@comcast.net,stf,1,04/11/2020 07:41:40,,,,,True
+Erin Gubert,erindgubert@gmail.com,stf,1,04/11/2020 07:41:40,,,,,True
+Heidi Star,chaidho@yahoo.com,stf,1,04/11/2020 07:41:40,,,,,True
+Lynne Helfand,lynnehelfand@gmail.com,stf,1,04/11/2020 07:41:41,,,,,True
+Julie Laukkanen,laukkanen@gmail.com,stf,1,04/11/2020 07:41:41,,,,,True
+Rick Shaffer,rickshaffer01@mac.com,stf,1,04/11/2020 07:41:41,,,,,True
 Jeanette Macht,jrmach@gmail.com,stf,,,,,,,True
 Ariane Barbanell Kassirer,aribarbanell@gmail.com,stf,,,,,,,True
 Glen Mohr,glen@glenmohr.com,stf,,,,,,,True
@@ -595,12 +595,12 @@ Andrea Bloch,apbloch@verizon.net,stf,,,,,,,True
 Tim Blackman,tim@blackmantravis.org,stf,,,,,,,True
 Katie Hoyer,katie.hoyer@gmail.com,stf,,,,,,,True
 Fred Moses,fred@fmoses.com,stf,,,,,,,True
-Bill Zimmer,wlzimmer@yahoo.com,fri,,,,,,,True
-David Cane,davidcane@alum.mit.edu,fri,,,,,,,True
-Chauncey Wilson,chauncey.wilson@gmail.com,fri,,,,,,,True
-Eric Peters,eric@hingepointinc.com,fri,,,,,,,True
-Tim Cummings,thcumings@comcast.net,fri,,,,,,,True
-Britt Hall,dbear2003@gmail.com,fri,,,,,,,True
+Bill Zimmer,wlzimmer@yahoo.com,fri,1,03/19/2020 12:06:05,,,,,True
+David Cane,davidcane@alum.mit.edu,fri,1,03/19/2020 12:08:10,,,,,True
+Chauncey Wilson,chauncey.wilson@gmail.com,fri,1,03/19/2020 12:04:30,,,,,True
+Eric Peters,eric@hingepointinc.com,fri,1,03/19/2020 12:05:44,,,,,True
+Tim Cummings,thcumings@comcast.net,fri,1,03/19/2020 12:10:17,1,03/19/2020 17:53:01,online,30.0,True
+Britt Hall,dbear2003@gmail.com,fri,1,03/19/2020 12:04:11,1,03/23/2020 18:33:13,online,20.0,True
 Jenn Brailler,jennifer.a.brallier@gmail.com,fri,,,,,,,True
 Luiza Aguiara,Luiza.Aguiar@perkins.org,fri,,,,,,,True
 Mark Globerson,mgloberson@gmail.com,fri,1,03/13/2020 16:36:07,1,03/13/2020 20:17:27,online,120.0,True

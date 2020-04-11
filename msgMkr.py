@@ -38,7 +38,9 @@ PS: My address on this email is different from the one in the Shir Tikvah direct
 """
 Hi <firstNm>,
 
-I'm beginning to raise funds for my Pan Mass Challenge ride in memory of Alan Finder. He made a musical contribution to Shir Tikvah through our chorus, Shir Chadash and Kiddush blessings on Friday nights. I know he is missed there.
+I was in the middle of raising funds for my Pan Mass Challenge ride in memory of Alan Finder when the coronavirus hit us, so I stopped. Since then the PMC has started an emergency response fund (see https://www.pmc.org/blog/emergency-response-fund) and I've started asking for donations again. You'll see from this link that PMC leadership understands that these are uncertain financial times for everyone and so do I. So anything you can give will be greatly appreciated.
+
+Alan Finder was an integral part of the Shir Tikvah community for many years. He made a musical contribution to Shir Tikvah through our chorus, Shir Chadash and Kiddush blessings on Friday nights. I know he is missed there.
 
 I have a webpage on the PMC website with some of my thoughts about Alan and some pictures. You can click on this link, profile.pmc.org/AB0492 if you'd like to donate by credit card.
 
@@ -76,11 +78,19 @@ Aaron
 """
 Hi <firstNm>,
 
-I'm raising funds for my Pan Mass Challenge ride in memory of my friend, Alan Finder. He made a musical contribution to my synagogue, through our chorus, torah study classes and at Friday night services. I know he is greatly missed there. Instructions are at the end of this email if you'd like to donate to my ride.
-<fileMsg>
+I was in the middle of raising funds for my Pan Mass Challenge ride in memory of Alan Finder when the coronavirus hit us, so I stopped. Since then the PMC has started an emergency response fund (see https://www.pmc.org/blog/emergency-response-fund) and I've started asking for donations again. You'll see from this link that PMC leadership understands that these are uncertain financial times for everyone and so do I. Anything you can give will be greatly appreciated.
+
+Alan Finder was an integral part of the Shir Tikvah community for many years. He made a musical contribution to Shir Tikvah through our chorus, Shir Chadash and Kiddush blessings on Friday nights. I know he is missed there.
+
 I have a webpage on the PMC website with some of my thoughts about Alan and some pictures. You can click on this link, profile.pmc.org/AB0492 if you'd like to donate by credit card.
 
 If you want to donate by check or Donor Advised Fund, here is the link on how to do it. https://www.pmc.org/ways-to-give.  Please include my egift ID (AB0492) so I can get credit toward my fundraising commitment.
+
+
+thanks for your support,
+Aaron Boxer
+
+PS: I saw recently that there has been some type of email scam sent to Shir Tikvah members in Rabbi Cari's name. If you are concerned about this email, contact me using my address in the Shir Tikvah directory under Lawrence Boxer (Aaron is my middle name).
 """
 }
 
