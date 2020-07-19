@@ -74,6 +74,25 @@ I hope you found the thoughts on my PMC webpage meaningful and I hope you enjoye
 thanks again,
 Aaron
 """,
+'lhs_rq1':
+"""
+Hi <firstNm>,
+
+I hope this email finds you healthy and safe. So much has changed since our 50th LHS Reunion that I feel like it happened 50 years ago. 
+
+Not long after the Reunion my good friend, Alan Finder, died of pancreatic cancer and I made plans to ride my bike in the Pan Mass Challenge to raise money for the Dana Farber Cancer Institute in his honor.
+
+Alan Finder was an integral part of my religious community, Shir Tikvah in Winchester MA. We sang and prayed together at Friday Night Shabbat services and we studied Torah together on Saturday mornings. He is greatly missed by this whole community.
+
+I have a webpage on the PMC website with some of my thoughts about Alan and some pictures. You can click on this link, profile.pmc.org/AB0492 if you'd like to donate by credit card.
+
+If you want to donate by check or Donor Advised Fund, here is the link on how to do it. https://www.pmc.org/ways-to-give.  Please include my egift ID (AB0492) so I can get credit toward my fundraising commitment.
+
+I understand that I am making this request during uncertain times for all of us and I will appreciate anything you feel you can give. 
+
+thanks for your support,
+Larry (Aaron) Boxer
+""",
 'cus_rq1':
 """
 Hi <firstNm>,

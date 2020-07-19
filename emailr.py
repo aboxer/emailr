@@ -22,7 +22,7 @@ for i in range(1,len(sys.argv)):
     if opt == 'upd':
       upd_flag = True
       print('upd = ','True')
-    elif re.match('tsg|stf|ind|sjo|try|fri',opt):
+    elif re.match('tsg|stf|ind|sjo|try|fri|lhs',opt):
       grp = opt
   elif re.match('\+\d+',arg):
     sndCt = int(arg[1:]) #chop of the dash
