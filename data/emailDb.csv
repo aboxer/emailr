@@ -1,5 +1,5 @@
 fullNm,email,grp,rqCt,lastRq,gvCt,lastGv,gvMeth,totAmt,act
-unknown,nobody@nomail.com,non,1,02/11/2020 11:56:16,1,02/11/2020 00:00:00,unknown,60.0,True
+unknown,nobody@nomail.com,non,1,02/11/2020 11:56:16,1,02/11/2020 00:00:00,unknown,85.0,True
 Jerilyn Heinold,Jheinold@comcast.net,stf,1,01/23/2020 00:00:00,1,01/23/2020 00:00:00,online,36.0,True
 Reva Shapiro,Rsnj2@aol.com,tsg,1,01/23/2020 00:00:00,1,01/23/2020 00:00:00,online,18.0,True
 Lynne Brodsky,lynnesgarden@gmail.com,tsg,1,01/23/2020 00:00:00,1,01/23/2020 00:00:00,online,120.0,True
@@ -601,48 +601,48 @@ Chauncey Wilson,chauncey.wilson@gmail.com,fri,1,03/19/2020 12:04:30,,,,,True
 Eric Peters,eric@hingepointinc.com,fri,1,03/19/2020 12:05:44,,,,,True
 Tim Cummings,thcumings@comcast.net,fri,1,03/19/2020 12:10:17,1,03/19/2020 17:53:01,online,30.0,True
 Britt Hall,dbear2003@gmail.com,fri,1,03/19/2020 12:04:11,1,03/23/2020 18:33:13,online,20.0,True
-Jenn Brailler,jennifer.a.brallier@gmail.com,fri,,,,,,,True
-Luiza Aguiara,Luiza.Aguiar@perkins.org,fri,,,,,,,True
+Jenn Brailler,jennifer.a.brallier@gmail.com,fri,1,07/23/2020 11:42:01,,,,,True
+Luiza Aguiara,Luiza.Aguiar@perkins.org,fri,1,07/23/2020 11:42:01,,,,,True
 Mark Globerson,mgloberson@gmail.com,fri,1,03/13/2020 16:36:07,1,03/13/2020 20:17:27,online,120.0,True
 Andy Nierenberg,andynierenberg@gmail.com,fri,1,03/15/2020 13:18:06,,,,,True
 Brian Tracey,brianhtracey@gmail.com,fri,1,03/13/2020 16:39:00,1,03/14/2020 10:27:59,online,30.0,True
 Joe Virga,joe_virga@yahoo.com,fri,1,03/15/2020 13:14:13,,,,,True
 Louis Guillaume,louis@zabrico.com,fri,1,03/15/2020 13:14:42,,,,,True
 Rafael Wood,robertw442@gmail.com,fri,1,03/13/2020 16:37:20,1,03/13/2020 21:36:17,online,72.0,True
-Lori Zuroff,lzuroff@gmail.com,fri,,,,,,,True
-Mike Keegan,mkeegan5@verizon.net,fri,,,,,,,True
-Eric Foxlin,efoxlin@gmail.com,fri,,,,,,,True
+Lori Zuroff,lzuroff@gmail.com,fri,1,07/23/2020 11:42:02,,,,,True
+Mike Keegan,mkeegan5@verizon.net,fri,1,07/23/2020 11:42:03,,,,,True
+Eric Foxlin,efoxlin@gmail.com,fri,1,07/23/2020 11:42:03,,,,,True
 George McNinch,gmcninch@gmail.com,fri,1,03/13/2020 16:39:22,,,,,True
-Neil Motenko,nmotenko@yahoo.com,fri,,,,,,,True
+Neil Motenko,nmotenko@yahoo.com,fri,1,07/23/2020 11:42:03,,,,,True
 Bob Morrison,bob_morrison@verizon.net,fri,1,03/13/2020 16:38:08,1,03/13/2020 20:16:38,online,120.0,True
 Dave Tomey,dtomey19@comcast.net,fri,1,03/15/2020 13:15:07,,,,,True
 george Bibler,gbibs@verizon.net,fri,1,03/15/2020 13:23:48,,,,,True
 Sue LaMontagne,s.lamontagne@verizon.net,fri,1,03/15/2020 13:24:26,,,,,True
 Dan WIlkening,danwjazz@gmail.com,fri,1,03/15/2020 13:26:26,,,,,True
-Mary Wallace,marycwallace@mac.com,fri,,,,,,,True
-Fred Percival,FredPercival@aol.com,fri,,,,,,,True
-George Lipka,lipkafam@rcn.com,fri,,,,,,,True
-Les Craigue,lcraigue@nycap.rr.com,fri,,,,,,,True
-Laura Baliestiero,laurabaliestiero@gmail.com,fri,,,,,,,True
-Don Monroe,dmonroe1948@gmail.com,fri,,,,,,,True
-Kendra Dowd,kendradowd@aol.com,fri,,,,,,,True
-David Fechtor,dafechtor@aol.com,fri,,,,,,,True
-Tom Dooley,slider37@rcn.com,fri,,,,,,,True
-Lee Ellis,lellis601@gmail.com,fri,,,,,,,True
-Morty Isaacson,ezmsi@rcn.com,fri,,,,,,,True
-Glenn Perrin,monsieurgp@comcast.net,fri,,,,,,,True
-Henry Goldberg,henrygoldberg@gmail.com,fri,,,,,,,True
-Carl Goldman,carlgoldma@aol.com,fri,,,,,,,True
-Steve Golson,sgolson@trilobyte.com,fri,,,,,,,True
+Mary Wallace,marycwallace@mac.com,fri,1,07/23/2020 11:42:04,,,,,True
+Fred Percival,FredPercival@aol.com,fri,1,07/23/2020 11:42:05,,,,,True
+George Lipka,lipkafam@rcn.com,fri,1,07/23/2020 11:42:05,,,,,True
+Les Craigue,lcraigue@nycap.rr.com,fri,1,07/23/2020 11:42:05,,,,,True
+Laura Baliestiero,laurabaliestiero@gmail.com,fri,1,07/23/2020 11:42:06,,,,,True
+Don Monroe,dmonroe1948@gmail.com,fri,1,07/23/2020 11:42:06,,,,,True
+Kendra Dowd,kendradowd@aol.com,fri,,,,,,,False
+David Fechtor,dafechtor@aol.com,fri,1,07/23/2020 11:42:06,,,,,True
+Tom Dooley,slider37@rcn.com,fri,1,07/23/2020 11:42:07,,,,,True
+Lee Ellis,lellis601@gmail.com,fri,1,07/23/2020 11:42:07,,,,,True
+Morty Isaacson,ezmsi@rcn.com,fri,1,07/23/2020 11:42:08,,,,,True
+Glenn Perrin,monsieurgp@comcast.net,fri,1,07/23/2020 11:42:08,,,,,True
+Henry Goldberg,henrygoldberg@gmail.com,fri,1,07/23/2020 11:42:08,,,,,True
+Carl Goldman,carlgoldma@aol.com,fri,1,07/23/2020 11:42:09,,,,,True
+Steve Golson,sgolson@trilobyte.com,fri,1,07/23/2020 11:42:09,,,,,True
 Margie Hilton,margiehill1@gmail.com,fri,,,,,,,True
 John Howard,jfhoward@alum.mit.edu,fri,,,,,,,True
 Jared Kass,kass.family@att.net,fri,,,,,,,True
-Lynn Kass,lynn.s.kass@gmail.com,fri,,,,,,,True
+Lynn Kass,lynn.s.kass@gmail.com,fri,,,,,,,False
 Sam Litvin,sam-arts@litvinhome.net,fri,,,,,,,True
 Mitch Rossich,rosich@athenianvp.com,fri,,,,,,,True
 Steve Mock,steve_mock@hotmail.com,fri,,,,,,,True
 Billy Novick,billnovick@rcn.com,fri,,,,,,,True
-Olivia Santoro,osantoro@aclum.org,fri,,,,,,,True
+Olivia Santoro,osantoro@aclum.org,fri,,,,,,,False
 Ben Peters,mrben214@gmail.com,fri,,,,,,,True
 Marty Plotkin,mplotkin@gmail.com,fri,,,,,,,True
 Steve Rauch,steven_rauch@meei.harvard.edu,fri,,,,,,,True
@@ -651,10 +651,10 @@ Steve Schiffman,stephenjschiffman@gmail.co,fri,,,,,,,True
 Josh Shapiro,joshuabshapiro@hotmail.com,fri,,,,,,,True
 Lisa Shapiro,LisaShapiro@msn.com,fri,,,,,,,True
 Judy Sundue,jsundue@hotmail.com,fri,,,,,,,True
-Dan Tisch,danrtisch@comcast.net,fri,,,,,,,True
+Dan Tisch,danrtisch@comcast.net,fri,,,,,,,False
 Robbie Tisch,robtisch@comcast.net,fri,,,,,,,True
-Aaron Boxer,aaron.boxer@gmail.com,fri,1,03/13/2020 16:33:43,,,,,True
-Larry Boxer,aboxer51@gmail.com,lhs,1,07/18/2020 22:28:14,,,,,True
+Aaron Boxer,aaron.boxer@gmail.com,try,1,07/23/2020 11:32:55,,,,,True
+Larry Boxer,aboxer51@gmail.com,try,1,07/23/2020 11:32:55,,,,,True
 Melissa Cook,mkcook06@gmail.com,stf,1,04/15/2020 21:16:50,1,04/15/2020 21:17:02,online,30.0,True
 Shelly Allison,rochelle@nova.edu,lhs,1,07/19/2020 10:36:24,,,,,True
 Michelle Alberts,mickeyalberts@yahoo.com,lhs,1,07/19/2020 10:36:24,,,,,True
@@ -663,7 +663,7 @@ Linda Aron,laroncpa@gmail.com,lhs,1,07/19/2020 10:36:25,,,,,True
 Gary Astrow,garyastrow@gmail.com,lhs,1,07/19/2020 10:36:25,,,,,True
 Laurie Beckelman,lbeckelman@aol.com,lhs,1,07/19/2020 10:36:26,,,,,True
 Elizabeth Berman,elizabethbberry@aol.com,lhs,1,07/19/2020 10:36:26,,,,,True
-Anne Bodell,ayoung@si.rr.com,lhs,,,,,,,True
+Anne Bodell,ayoung@si.rr.com,lhs,1,07/20/2020 07:52:08,1,07/20/2020 13:52:45,online,20.0,True
 Ian Brecher,ilb31@aol.com,lhs,1,07/19/2020 10:36:27,,,,,True
 Meryl Bromberg,merylgreenbaum23@gmail.com,lhs,1,07/19/2020 10:36:28,1,07/19/2020 12:57:16,online,30.0,True
 Annette Coco,annettecoco@yahoo.com,lhs,1,07/19/2020 10:36:28,,,,,True
@@ -671,53 +671,53 @@ Alice Coren,areichenberg45@gmail.com,lhs,1,07/19/2020 10:36:28,,,,,True
 Robert Douglas,rdouglas00@aol.com,lhs,1,07/19/2020 10:36:29,,,,,True
 Helaine Eckstein,halive@aol.com,lhs,1,07/19/2020 10:36:29,,,,,True
 Jill Eichner,reachjill@msn.com,lhs,1,07/19/2020 10:36:29,,,,,True
-Candis Feintuch,candiscms@aol.com,lhs,,,,,,,True
-Kathy Fleischer,gru678@aol.com,lhs,,,,,,,True
-Charles Franken,charlesfranken29@gmail.com,lhs,,,,,,,True
-Barry Gabel,barrygabel@livenation.com,lhs,,,,,,,True
-Debby Gassman,debster51@aol.com,lhs,,,,,,,True
-Judy Gewanter,jberkowitz@charter.net,lhs,,,,,,,True
-Barbara Glachman,bgrad104@aol.com,lhs,,,,,,,True
-Candy Graham,cmandel1111@gmail.com,lhs,,,,,,,True
-Arthur Green,arthurgreen59@gmail.com,lhs,,,,,,,True
-Lanny Harris,lharris@prologowear.com,lhs,,,,,,,True
-Rochelle Henner,sheldoc@comcast.net,lhs,,,,,,,True
-Iris Hiller,bunnyijb@aol.com,lhs,,,,,,,True
-Ellen Kozminski,ellen.kozminski@aol.com,lhs,,,,,,,True
-Gigi Augusta Krop,gigikrop@gmail.com,lhs,,,,,,,True
-Susan Levy,suzq51@gmail.com,lhs,,,,,,,True
-Barry Litt,barrytower@aol.com,lhs,,,,,,,True
-Shelly Lurie,luriegirl@aol.com,lhs,,,,,,,True
-Rhona Magelowitz,rhosmag@aol.com,lhs,,,,,,,True
-Mark McCague,mark.c.mccague@gmail.com,lhs,,,,,,,True
-Marshall Menachem,purecoatm@aol.com,lhs,,,,,,,True
-Adriane Menorach,ahirsh4667@aol.com,lhs,,,,,,,True
-Mitchell Muroff,mmuroff@muroffdaigle.com,lhs,,,,,,,True
-Richard Posoff,richardposoff@gmail.com,lhs,,,,,,,True
-Cynthia Saltzman,cynthias@rutgers.edu,lhs,,,,,,,True
-Mitchell Sameroff,msameroff@yahoo.com,lhs,,,,,,,True
-Ann Schreckinger,allhand123@aol.com,lhs,,,,,,,True
-Kenneth Schwartz,kenneth@monmouth.com,lhs,,,,,,,True
-Steven Shapiro,slsw2001@yahoo.com,lhs,,,,,,,True
-Robert Sharrot,taz9950056@yahoo.com,lhs,,,,,,,True
-Karen Silbowitz,ksilbowitz@gmail.com,lhs,,,,,,,True
-Marcie Simons,msg0319@gmail.com,lhs,,,,,,,True
-Jan Slow,vanishingcowboys@yahoo.com,lhs,,,,,,,True
-Sherry Smith,lucy1969@verizon.net,lhs,,,,,,,True
-Barbara Stein,tenstein@snet.net,lhs,,,,,,,True
-Sue Tannenbaum,suemargolies@gmail.com,lhs,,,,,,,True
-Polly Van Raalte,drpolly@hotmail.com,lhs,,,,,,,True
-Hope Wallach,hopeinman@gmail.com,lhs,,,,,,,True
-Cindy Warren,cwarren@cm-law.com,lhs,,,,,,,True
-Marsha Weiss,crimper10@aol.com,lhs,,,,,,,True
-Robin Wexler,profrobinw@aol.com,lhs,,,,,,,True
-Vicki Wilson,vicki711951@verizon.net,lhs,,,,,,,True
-Michael Zacharia,michael@zachariaassociates.com,lhs,,,,,,,True
-Larry Bassoff,flynnfalcon@roadrunner.com,lhs,,,,,,,True
-Kathy Dardeck,kdardeck@verizon.net,lhs,,,,,,,True
-Carol Fox,carol724@aol.com,lhs,,,,,,,True
-Mark Goldstein,markgoldstein9@gmail.com,lhs,,,,,,,True
-Andrew Levine,alevine@bluelatitudeconsulting.com,lhs,,,,,,,True
-Beryl Nulman,berylrubin@gmail.com,lhs,,,,,,,True
-Larry Singer,singer54@bellsouth.net,lhs,,,,,,,True
-Robin Solomon,rsolomon@foxrothschild.com,lhs,,,,,,,True
+Candis Feintuch,candiscms@aol.com,lhs,1,07/20/2020 07:52:08,,,,,True
+Kathy Fleischer,gru678@aol.com,lhs,1,07/20/2020 07:52:09,,,,,True
+Charles Franken,charlesfranken29@gmail.com,lhs,1,07/20/2020 07:52:09,,,,,True
+Barry Gabel,barrygabel@livenation.com,lhs,1,07/20/2020 07:52:10,,,,,True
+Debby Gassman,debster51@aol.com,lhs,1,07/20/2020 07:52:10,,,,,True
+Judy Gewanter,jberkowitz@charter.net,lhs,1,07/20/2020 07:52:10,,,,,True
+Barbara Glachman,bgrad104@aol.com,lhs,1,07/20/2020 07:52:11,,,,,True
+Candy Graham,cmandel1111@gmail.com,lhs,1,07/20/2020 07:52:11,,,,,True
+Arthur Green,arthurgreen59@gmail.com,lhs,1,07/20/2020 07:52:12,,,,,True
+Lanny Harris,lharris@prologowear.com,lhs,1,07/20/2020 07:52:12,,,,,True
+Rochelle Henner,sheldoc@comcast.net,lhs,1,07/20/2020 07:52:13,,,,,True
+Iris Hiller,bunnyijb@aol.com,lhs,1,07/20/2020 07:52:13,,,,,True
+Ellen Kozminski,ellen.kozminsky@yahoo.com,lhs,1,07/22/2020 07:46:50,,,,,True
+Gigi Augusta Krop,gigikrop@gmail.com,lhs,1,07/20/2020 07:52:14,,,,,True
+Susan Levy,suzq51@gmail.com,lhs,1,07/20/2020 07:52:14,,,,,True
+Barry Litt,barrytower@aol.com,lhs,1,07/20/2020 07:52:15,,,,,True
+Shelly Lurie,luriegirl@aol.com,lhs,1,07/21/2020 07:58:45,,,,,True
+Rhona Magelowitz,rhosmag@aol.com,lhs,1,07/21/2020 07:58:46,,,,,True
+Mark McCague,mark.c.mccague@gmail.com,lhs,1,07/21/2020 07:58:46,,,,,True
+Marshall Menachem,purecoatm@aol.com,lhs,1,07/21/2020 07:58:47,,,,,True
+Adriane Menorach,ahirsh4667@aol.com,lhs,1,07/21/2020 07:58:47,,,,,True
+Mitchell Muroff,mmuroff@muroffdaigle.com,lhs,1,07/21/2020 07:58:47,,,,,True
+Richard Posoff,richardposoff@gmail.com,lhs,1,07/21/2020 07:58:48,,,,,True
+Cynthia Saltzman,cynthias@rutgers.edu,lhs,1,07/21/2020 07:58:48,,,,,True
+Mitchell Sameroff,msameroff@yahoo.com,lhs,1,07/21/2020 07:58:49,,,,,True
+Ann Schreckinger,allhand123@aol.com,lhs,1,07/21/2020 07:58:49,,,,,True
+Kenneth Schwartz,kenneth@monmouth.com,lhs,1,07/21/2020 07:58:50,,,,,True
+Steven Shapiro,slsw2001@yahoo.com,lhs,1,07/21/2020 07:58:50,,,,,True
+Robert Sharrot,taz9950056@yahoo.com,lhs,1,07/21/2020 07:58:51,,,,,True
+Karen Silbowitz,ksilbowitz@gmail.com,lhs,1,07/21/2020 07:58:51,,,,,True
+Marcie Simons,msg0319@gmail.com,lhs,1,07/21/2020 07:58:52,,,,,True
+Jan Slow,vanishingcowboys@yahoo.com,lhs,1,07/21/2020 07:58:52,,,,,True
+Sherry Smith,lucy1969@verizon.net,lhs,1,07/21/2020 07:58:52,,,,,True
+Barbara Stein,tenstein@snet.net,lhs,1,07/22/2020 07:46:51,,,,,True
+Sue Tannenbaum,suemargolies@gmail.com,lhs,1,07/22/2020 07:46:51,,,,,True
+Polly Van Raalte,drpolly@hotmail.com,lhs,1,07/22/2020 07:46:52,,,,,True
+Hope Wallach,hopeinman@gmail.com,lhs,1,07/22/2020 07:46:52,,,,,True
+Cindy Warren,cwarren@cm-law.com,lhs,1,07/22/2020 07:46:52,1,07/22/2020 09:17:32,online,100.0,True
+Marsha Weiss,crimper10@aol.com,lhs,1,07/22/2020 07:46:53,,,,,True
+Robin Wexler,profrobinw@aol.com,lhs,1,07/22/2020 07:46:53,,,,,True
+Vicki Wilson,vicki711951@verizon.net,lhs,1,07/22/2020 07:46:54,,,,,True
+Michael Zacharia,michael@zachariaassociates.com,lhs,1,07/22/2020 07:46:54,,,,,True
+Larry Bassoff,flynnfalcon@roadrunner.com,lhs,1,07/22/2020 07:46:55,,,,,True
+Kathy Dardeck,kdardeck@verizon.net,lhs,1,07/22/2020 07:46:55,,,,,True
+Carol Fox,carol724@aol.com,lhs,1,07/22/2020 07:46:56,,,,,True
+Mark Goldstein,markgoldstein9@gmail.com,lhs,1,07/22/2020 07:46:56,,,,,True
+Andrew Levine,alevine@bluelatitudeconsulting.com,lhs,1,07/22/2020 07:46:57,,,,,True
+Beryl Nulman,berylrubin@gmail.com,lhs,1,07/22/2020 07:46:57,,,,,True
+Larry Singer,singer54@bellsouth.net,lhs,1,07/22/2020 07:46:57,,,,,True
+Robin Solomon,rsolomon@foxrothschild.com,lhs,1,07/22/2020 07:46:58,,,,,True

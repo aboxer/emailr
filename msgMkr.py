@@ -34,6 +34,23 @@ Aaron
 
 PS: My address on this email is different from the one in the Shir Tikvah directory because I am using a different account to manage my PMC communications. I saw recently that there has been some type of email scam sent to Shir Tikvah members in Rabbi Cari's name. If you are concerned about this email, let me know using my address in the Shir Tikvah directory under Lawrence Boxer (Aaron is my middle name).
 """,
+'fri_rq1':
+"""
+Hi <firstNm>,
+
+I hope this email finds you healthy and safe. So much has changed in the last few months. Last Fall, my good friend, Alan Finder, died of pancreatic cancer and I made plans to ride my bike in the Pan Mass Challenge to raise money for the Dana Farber Cancer Institute in his honor.  
+
+I was in the middle of raising funds when the coronavirus hit us, so I stopped. Since then the PMC has restructured the whole event and I've started asking for donations again. I understand that I am making this request during uncertain times for all of us and I will appreciate anything you feel you can give. 
+
+Alan Finder was an integral part of my religious community, Shir Tikvah in Winchester MA. We sang and prayed together at Friday Night Shabbat services and we studied Torah together on Saturday mornings. He is greatly missed by this whole community.
+
+I have a webpage on the PMC website with some of my thoughts about Alan and some pictures. You can click on this link, profile.pmc.org/AB0492 if you'd like to donate by credit card.
+
+If you want to donate by check or Donor Advised Fund, here is the link on how to do it. https://www.pmc.org/ways-to-give.  Please include my egift ID (AB0492) so I can get credit toward my fundraising commitment.
+
+thanks for your support,
+Aaron (Larry) Boxer
+""",
 'stf_rq1':
 """
 Hi <firstNm>,
